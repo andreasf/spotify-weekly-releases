@@ -1,0 +1,429 @@
+{
+  "albums" : [ {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7vZ7qmfXiu114lY0qm7rOe"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7vZ7qmfXiu114lY0qm7rOe",
+      "id" : "7vZ7qmfXiu114lY0qm7rOe",
+      "name" : "Robert Glasper Experiment",
+      "type" : "artist",
+      "uri" : "spotify:artist:7vZ7qmfXiu114lY0qm7rOe"
+    } ],
+    "available_markets" : [ "AD", "AR" ],
+    "copyrights" : [ {
+      "text" : "(C) 2013 Blue Note Records",
+      "type" : "C"
+    }, {
+      "text" : "(P) 2013 Blue Note Records",
+      "type" : "P"
+    } ],
+    "external_ids" : {
+      "upc" : "00602537433902"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6D6v2UODKxjwVnySdEjpEX"
+    },
+    "genres" : [ ],
+    "href" : "https://api.spotify.com/v1/albums/6D6v2UODKxjwVnySdEjpEX",
+    "id" : "6D6v2UODKxjwVnySdEjpEX",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/314cbe820f413b25cad6bf1a419503be3dc7dc2c",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/d8829b299f0204a1dd55cf1076bdca765b6da97d",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/9b80e007246145816bb57a4fa0fd245b69836abc",
+      "width" : 64
+    } ],
+    "label" : "Digital Distribution Trinidad and Tobago",
+    "name" : "Black Radio 2 (Deluxe)",
+    "popularity" : 41,
+    "release_date" : "2013-01-01",
+    "release_date_precision" : "day",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/albums/6D6v2UODKxjwVnySdEjpEX/tracks?offset=0&limit=50",
+      "items" : [ {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/7vZ7qmfXiu114lY0qm7rOe"
+          },
+          "href" : "https://api.spotify.com/v1/artists/7vZ7qmfXiu114lY0qm7rOe",
+          "id" : "7vZ7qmfXiu114lY0qm7rOe",
+          "name" : "Robert Glasper Experiment",
+          "type" : "artist",
+          "uri" : "spotify:artist:7vZ7qmfXiu114lY0qm7rOe"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "UY" ],
+        "disc_number" : 1,
+        "duration_ms" : 263653,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/2fus3smj2B653XXRGoLiYd"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/2fus3smj2B653XXRGoLiYd",
+        "id" : "2fus3smj2B653XXRGoLiYd",
+        "name" : "Baby Tonight - Black Radio 2 Theme/Mic Check 2",
+        "preview_url" : "https://p.scdn.co/mp3-preview/1dda17f2807493e62c1581bd7464ff1133286a97?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 1,
+        "type" : "track",
+        "uri" : "spotify:track:2fus3smj2B653XXRGoLiYd"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/7vZ7qmfXiu114lY0qm7rOe"
+          },
+          "href" : "https://api.spotify.com/v1/artists/7vZ7qmfXiu114lY0qm7rOe",
+          "id" : "7vZ7qmfXiu114lY0qm7rOe",
+          "name" : "Robert Glasper Experiment",
+          "type" : "artist",
+          "uri" : "spotify:artist:7vZ7qmfXiu114lY0qm7rOe"
+        }, {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/2GHclqNVjqGuiE5mA7BEoc"
+          },
+          "href" : "https://api.spotify.com/v1/artists/2GHclqNVjqGuiE5mA7BEoc",
+          "id" : "2GHclqNVjqGuiE5mA7BEoc",
+          "name" : "Common",
+          "type" : "artist",
+          "uri" : "spotify:artist:2GHclqNVjqGuiE5mA7BEoc"
+        }, {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/0wsdUS0EJ7zHgti2nxTVWR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/0wsdUS0EJ7zHgti2nxTVWR",
+          "id" : "0wsdUS0EJ7zHgti2nxTVWR",
+          "name" : "Patrick Stump",
+          "type" : "artist",
+          "uri" : "spotify:artist:0wsdUS0EJ7zHgti2nxTVWR"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "UY" ],
+        "disc_number" : 1,
+        "duration_ms" : 293960,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/1NlTw8XgQrrWJEnXDlk7iq"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/1NlTw8XgQrrWJEnXDlk7iq",
+        "id" : "1NlTw8XgQrrWJEnXDlk7iq",
+        "name" : "I Stand Alone",
+        "preview_url" : "https://p.scdn.co/mp3-preview/c217fba9ebf68fccbbdce7512aea13aca0128c45?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 2,
+        "type" : "track",
+        "uri" : "spotify:track:1NlTw8XgQrrWJEnXDlk7iq"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/7vZ7qmfXiu114lY0qm7rOe"
+          },
+          "href" : "https://api.spotify.com/v1/artists/7vZ7qmfXiu114lY0qm7rOe",
+          "id" : "7vZ7qmfXiu114lY0qm7rOe",
+          "name" : "Robert Glasper Experiment",
+          "type" : "artist",
+          "uri" : "spotify:artist:7vZ7qmfXiu114lY0qm7rOe"
+        }, {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/05oH07COxkXKIMt6mIPRee"
+          },
+          "href" : "https://api.spotify.com/v1/artists/05oH07COxkXKIMt6mIPRee",
+          "id" : "05oH07COxkXKIMt6mIPRee",
+          "name" : "Brandy",
+          "type" : "artist",
+          "uri" : "spotify:artist:05oH07COxkXKIMt6mIPRee"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "UY" ],
+        "disc_number" : 1,
+        "duration_ms" : 214920,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/5VgshfaTxvVsaJUanqkz8u"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/5VgshfaTxvVsaJUanqkz8u",
+        "id" : "5VgshfaTxvVsaJUanqkz8u",
+        "name" : "What Are We Doing",
+        "preview_url" : "https://p.scdn.co/mp3-preview/a5ba6488277abedde676be063e34d02c03cdfb93?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 3,
+        "type" : "track",
+        "uri" : "spotify:track:5VgshfaTxvVsaJUanqkz8u"
+      } ],
+      "limit" : 50,
+      "next" : null,
+      "offset" : 0,
+      "previous" : null,
+      "total" : 16
+    },
+    "type" : "album",
+    "uri" : "spotify:album:6D6v2UODKxjwVnySdEjpEX"
+  }, {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/6liAMWkVf5LH7YR9yfFy1Y"
+      },
+      "href" : "https://api.spotify.com/v1/artists/6liAMWkVf5LH7YR9yfFy1Y",
+      "id" : "6liAMWkVf5LH7YR9yfFy1Y",
+      "name" : "Portishead",
+      "type" : "artist",
+      "uri" : "spotify:artist:6liAMWkVf5LH7YR9yfFy1Y"
+    } ],
+    "available_markets" : [ "CA", "MX", "US" ],
+    "copyrights" : [ {
+      "text" : "(C) 1994 Go! Discs Ltd.",
+      "type" : "C"
+    }, {
+      "text" : "(P) 1994 Go! Discs Ltd.",
+      "type" : "P"
+    } ],
+    "external_ids" : {
+      "upc" : "00042282855329"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/3539EbNgIdEDGBKkUf4wno"
+    },
+    "genres" : [ ],
+    "href" : "https://api.spotify.com/v1/albums/3539EbNgIdEDGBKkUf4wno",
+    "id" : "3539EbNgIdEDGBKkUf4wno",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/8f0a17752041df0183d038f548215f0248399be6",
+      "width" : 631
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/bdba160d722bb14023d41e01ac913210823059ca",
+      "width" : 296
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/adef9da8bf5a470f38f1ab7e6dc5ebe774444b96",
+      "width" : 63
+    } ],
+    "label" : "Interscope",
+    "name" : "Dummy (Non UK Version)",
+    "popularity" : 60,
+    "release_date" : "1994-01-01",
+    "release_date_precision" : "day",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/albums/3539EbNgIdEDGBKkUf4wno/tracks?offset=0&limit=50",
+      "items" : [ {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/6liAMWkVf5LH7YR9yfFy1Y"
+          },
+          "href" : "https://api.spotify.com/v1/artists/6liAMWkVf5LH7YR9yfFy1Y",
+          "id" : "6liAMWkVf5LH7YR9yfFy1Y",
+          "name" : "Portishead",
+          "type" : "artist",
+          "uri" : "spotify:artist:6liAMWkVf5LH7YR9yfFy1Y"
+        } ],
+        "available_markets" : [ "CA", "MX", "US" ],
+        "disc_number" : 1,
+        "duration_ms" : 306200,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/2O6X9nPVVQSefg3xOQAo5u"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/2O6X9nPVVQSefg3xOQAo5u",
+        "id" : "2O6X9nPVVQSefg3xOQAo5u",
+        "name" : "Mysterons",
+        "preview_url" : "https://p.scdn.co/mp3-preview/35b02010739beede410aee4acdb22eedd18790c2?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 1,
+        "type" : "track",
+        "uri" : "spotify:track:2O6X9nPVVQSefg3xOQAo5u"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/6liAMWkVf5LH7YR9yfFy1Y"
+          },
+          "href" : "https://api.spotify.com/v1/artists/6liAMWkVf5LH7YR9yfFy1Y",
+          "id" : "6liAMWkVf5LH7YR9yfFy1Y",
+          "name" : "Portishead",
+          "type" : "artist",
+          "uri" : "spotify:artist:6liAMWkVf5LH7YR9yfFy1Y"
+        } ],
+        "available_markets" : [ "CA", "MX", "US" ],
+        "disc_number" : 1,
+        "duration_ms" : 254000,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/6vTtCOimcPs5H1Jr9d0Aep"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/6vTtCOimcPs5H1Jr9d0Aep",
+        "id" : "6vTtCOimcPs5H1Jr9d0Aep",
+        "name" : "Sour Times",
+        "preview_url" : "https://p.scdn.co/mp3-preview/525771a52de05df838477fea6a9d9b2662d41ae9?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 2,
+        "type" : "track",
+        "uri" : "spotify:track:6vTtCOimcPs5H1Jr9d0Aep"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/6liAMWkVf5LH7YR9yfFy1Y"
+          },
+          "href" : "https://api.spotify.com/v1/artists/6liAMWkVf5LH7YR9yfFy1Y",
+          "id" : "6liAMWkVf5LH7YR9yfFy1Y",
+          "name" : "Portishead",
+          "type" : "artist",
+          "uri" : "spotify:artist:6liAMWkVf5LH7YR9yfFy1Y"
+        } ],
+        "available_markets" : [ "CA", "MX", "US" ],
+        "disc_number" : 1,
+        "duration_ms" : 238000,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/6pW8YspamPCxUwgvYttTSc"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/6pW8YspamPCxUwgvYttTSc",
+        "id" : "6pW8YspamPCxUwgvYttTSc",
+        "name" : "Strangers",
+        "preview_url" : "https://p.scdn.co/mp3-preview/74178d09b392b9dd4884704ffbd248cc02534fcb?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 3,
+        "type" : "track",
+        "uri" : "spotify:track:6pW8YspamPCxUwgvYttTSc"
+      } ],
+      "limit" : 50,
+      "next" : null,
+      "offset" : 0,
+      "previous" : null,
+      "total" : 11
+    },
+    "type" : "album",
+    "uri" : "spotify:album:3539EbNgIdEDGBKkUf4wno"
+  }, {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/6FXMGgJwohJLUSr5nVlf9X"
+      },
+      "href" : "https://api.spotify.com/v1/artists/6FXMGgJwohJLUSr5nVlf9X",
+      "id" : "6FXMGgJwohJLUSr5nVlf9X",
+      "name" : "Massive Attack",
+      "type" : "artist",
+      "uri" : "spotify:artist:6FXMGgJwohJLUSr5nVlf9X"
+    } ],
+    "available_markets" : [ "AB", "CD" ],
+    "copyrights" : [ {
+      "text" : "(C) 1998 Virgin Records LtdThis label copy information is the subject of copyright protection. All rights reserved.(C) 1998 Virgin Records Ltd",
+      "type" : "C"
+    }, {
+      "text" : "(P) 1998 The copyright in this sound recording is owned by Virgin Records Ltd",
+      "type" : "P"
+    } ],
+    "external_ids" : {
+      "upc" : "00724384559953"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/49MNmJhZQewjt06rpwp6QR"
+    },
+    "genres" : [ ],
+    "href" : "https://api.spotify.com/v1/albums/49MNmJhZQewjt06rpwp6QR",
+    "id" : "49MNmJhZQewjt06rpwp6QR",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/fb9b24b7060cc4f8b72cf25c0b35fb9661b1230b",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/8b923b9f2ddf641d57b6fbeae3656eb4b71c636d",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/57753f6dc925e49e76cd638fd8c5b08c619d66f7",
+      "width" : 64
+    } ],
+    "label" : "Circa",
+    "name" : "Mezzanine",
+    "popularity" : 68,
+    "release_date" : "1998-04-20",
+    "release_date_precision" : "day",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/albums/49MNmJhZQewjt06rpwp6QR/tracks?offset=0&limit=50",
+      "items" : [ {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/6FXMGgJwohJLUSr5nVlf9X"
+          },
+          "href" : "https://api.spotify.com/v1/artists/6FXMGgJwohJLUSr5nVlf9X",
+          "id" : "6FXMGgJwohJLUSr5nVlf9X",
+          "name" : "Massive Attack",
+          "type" : "artist",
+          "uri" : "spotify:artist:6FXMGgJwohJLUSr5nVlf9X"
+        } ],
+        "available_markets" : [ "AB", "CD" ],
+        "disc_number" : 1,
+        "duration_ms" : 379533,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/7uv632EkfwYhXoqf8rhYrg"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/7uv632EkfwYhXoqf8rhYrg",
+        "id" : "7uv632EkfwYhXoqf8rhYrg",
+        "name" : "Angel",
+        "preview_url" : "https://p.scdn.co/mp3-preview/d8d069e27fd103a2fbb34fe9932dcbba686e31e1?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 1,
+        "type" : "track",
+        "uri" : "spotify:track:7uv632EkfwYhXoqf8rhYrg"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/6FXMGgJwohJLUSr5nVlf9X"
+          },
+          "href" : "https://api.spotify.com/v1/artists/6FXMGgJwohJLUSr5nVlf9X",
+          "id" : "6FXMGgJwohJLUSr5nVlf9X",
+          "name" : "Massive Attack",
+          "type" : "artist",
+          "uri" : "spotify:artist:6FXMGgJwohJLUSr5nVlf9X"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+        "disc_number" : 1,
+        "duration_ms" : 298826,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/6ggJ6MceyHGWtUg1KLp3M1"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/6ggJ6MceyHGWtUg1KLp3M1",
+        "id" : "6ggJ6MceyHGWtUg1KLp3M1",
+        "name" : "Risingson",
+        "preview_url" : "https://p.scdn.co/mp3-preview/5ab45588f3c908f2aa8653f2f11dc80896d60cc6?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 2,
+        "type" : "track",
+        "uri" : "spotify:track:6ggJ6MceyHGWtUg1KLp3M1"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/6FXMGgJwohJLUSr5nVlf9X"
+          },
+          "href" : "https://api.spotify.com/v1/artists/6FXMGgJwohJLUSr5nVlf9X",
+          "id" : "6FXMGgJwohJLUSr5nVlf9X",
+          "name" : "Massive Attack",
+          "type" : "artist",
+          "uri" : "spotify:artist:6FXMGgJwohJLUSr5nVlf9X"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+        "disc_number" : 1,
+        "duration_ms" : 330773,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/67Hna13dNDkZvBpTXRIaOJ"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/67Hna13dNDkZvBpTXRIaOJ",
+        "id" : "67Hna13dNDkZvBpTXRIaOJ",
+        "name" : "Teardrop",
+        "preview_url" : "https://p.scdn.co/mp3-preview/7b9c22dbd27bd948cb6a515bb79c19f1e73ffe1d?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 3,
+        "type" : "track",
+        "uri" : "spotify:track:67Hna13dNDkZvBpTXRIaOJ"
+      } ],
+      "limit" : 50,
+      "next" : null,
+      "offset" : 0,
+      "previous" : null,
+      "total" : 11
+    },
+    "type" : "album",
+    "uri" : "spotify:album:49MNmJhZQewjt06rpwp6QR"
+  } ]
+}

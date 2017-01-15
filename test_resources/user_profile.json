@@ -1,0 +1,16 @@
+{
+  "country" : "market-id",
+  "display_name" : null,
+  "external_urls" : {
+    "spotify" : "https://open.spotify.com/user/user-id"
+  },
+  "followers" : {
+    "href" : null,
+    "total" : 5
+  },
+  "href" : "https://api.spotify.com/v1/users/user-id",
+  "id" : "user-id",
+  "images" : [ ],
+  "type" : "user",
+  "uri" : "spotify:user:user-id"
+}

@@ -1,0 +1,161 @@
+{
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7vZ7qmfXiu114lY0qm7rOe"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7vZ7qmfXiu114lY0qm7rOe",
+      "id" : "7vZ7qmfXiu114lY0qm7rOe",
+      "name" : "Robert Glasper Experiment",
+      "type" : "artist",
+      "uri" : "spotify:artist:7vZ7qmfXiu114lY0qm7rOe"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "UY" ],
+    "copyrights" : [ {
+      "text" : "(C) 2013 Blue Note Records",
+      "type" : "C"
+    }, {
+      "text" : "(P) 2013 Blue Note Records",
+      "type" : "P"
+    } ],
+    "external_ids" : {
+      "upc" : "00602537433902"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6D6v2UODKxjwVnySdEjpEX"
+    },
+    "genres" : [ ],
+    "href" : "https://api.spotify.com/v1/albums/6D6v2UODKxjwVnySdEjpEX",
+    "id" : "cached-id",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/314cbe820f413b25cad6bf1a419503be3dc7dc2c",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/d8829b299f0204a1dd55cf1076bdca765b6da97d",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/9b80e007246145816bb57a4fa0fd245b69836abc",
+      "width" : 64
+    } ],
+    "label" : "Digital Distribution Trinidad and Tobago",
+    "name" : "Black Radio 2 (Cached)",
+    "popularity" : 41,
+    "release_date" : "2013-01-01",
+    "release_date_precision" : "day",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/albums/6D6v2UODKxjwVnySdEjpEX/tracks?offset=0&limit=50",
+      "items" : [ {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/7vZ7qmfXiu114lY0qm7rOe"
+          },
+          "href" : "https://api.spotify.com/v1/artists/7vZ7qmfXiu114lY0qm7rOe",
+          "id" : "7vZ7qmfXiu114lY0qm7rOe",
+          "name" : "Robert Glasper Experiment",
+          "type" : "artist",
+          "uri" : "spotify:artist:7vZ7qmfXiu114lY0qm7rOe"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "UY" ],
+        "disc_number" : 1,
+        "duration_ms" : 263653,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/2fus3smj2B653XXRGoLiYd"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/2fus3smj2B653XXRGoLiYd",
+        "id" : "2fus3smj2B653XXRGoLiYd",
+        "name" : "Baby Tonight - Black Radio 2 Theme/Mic Check 2",
+        "preview_url" : "https://p.scdn.co/mp3-preview/1dda17f2807493e62c1581bd7464ff1133286a97?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 1,
+        "type" : "track",
+        "uri" : "spotify:track:2fus3smj2B653XXRGoLiYd"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/7vZ7qmfXiu114lY0qm7rOe"
+          },
+          "href" : "https://api.spotify.com/v1/artists/7vZ7qmfXiu114lY0qm7rOe",
+          "id" : "7vZ7qmfXiu114lY0qm7rOe",
+          "name" : "Robert Glasper Experiment",
+          "type" : "artist",
+          "uri" : "spotify:artist:7vZ7qmfXiu114lY0qm7rOe"
+        }, {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/2GHclqNVjqGuiE5mA7BEoc"
+          },
+          "href" : "https://api.spotify.com/v1/artists/2GHclqNVjqGuiE5mA7BEoc",
+          "id" : "2GHclqNVjqGuiE5mA7BEoc",
+          "name" : "Common",
+          "type" : "artist",
+          "uri" : "spotify:artist:2GHclqNVjqGuiE5mA7BEoc"
+        }, {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/0wsdUS0EJ7zHgti2nxTVWR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/0wsdUS0EJ7zHgti2nxTVWR",
+          "id" : "0wsdUS0EJ7zHgti2nxTVWR",
+          "name" : "Patrick Stump",
+          "type" : "artist",
+          "uri" : "spotify:artist:0wsdUS0EJ7zHgti2nxTVWR"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "UY" ],
+        "disc_number" : 1,
+        "duration_ms" : 293960,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/1NlTw8XgQrrWJEnXDlk7iq"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/1NlTw8XgQrrWJEnXDlk7iq",
+        "id" : "1NlTw8XgQrrWJEnXDlk7iq",
+        "name" : "I Stand Alone",
+        "preview_url" : "https://p.scdn.co/mp3-preview/c217fba9ebf68fccbbdce7512aea13aca0128c45?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 2,
+        "type" : "track",
+        "uri" : "spotify:track:1NlTw8XgQrrWJEnXDlk7iq"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/7vZ7qmfXiu114lY0qm7rOe"
+          },
+          "href" : "https://api.spotify.com/v1/artists/7vZ7qmfXiu114lY0qm7rOe",
+          "id" : "7vZ7qmfXiu114lY0qm7rOe",
+          "name" : "Robert Glasper Experiment",
+          "type" : "artist",
+          "uri" : "spotify:artist:7vZ7qmfXiu114lY0qm7rOe"
+        }, {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/05oH07COxkXKIMt6mIPRee"
+          },
+          "href" : "https://api.spotify.com/v1/artists/05oH07COxkXKIMt6mIPRee",
+          "id" : "05oH07COxkXKIMt6mIPRee",
+          "name" : "Brandy",
+          "type" : "artist",
+          "uri" : "spotify:artist:05oH07COxkXKIMt6mIPRee"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "UY" ],
+        "disc_number" : 1,
+        "duration_ms" : 214920,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/5VgshfaTxvVsaJUanqkz8u"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/5VgshfaTxvVsaJUanqkz8u",
+        "id" : "5VgshfaTxvVsaJUanqkz8u",
+        "name" : "What Are We Doing",
+        "preview_url" : "https://p.scdn.co/mp3-preview/a5ba6488277abedde676be063e34d02c03cdfb93?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 3,
+        "type" : "track",
+        "uri" : "spotify:track:5VgshfaTxvVsaJUanqkz8u"
+      } ],
+      "limit" : 50,
+      "next" : null,
+      "offset" : 0,
+      "previous" : null,
+      "total" : 16
+    },
+    "type" : "album",
+    "uri" : "spotify:album:6D6v2UODKxjwVnySdEjpEX"
+  }

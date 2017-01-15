@@ -1,0 +1,39 @@
+{
+  "href" : "https://api.spotify.com/v1/artists/foo-id/albums?offset=2&limit=2&album_type=single,album,compilation,appears_on,ep",
+  "items" : [ {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/foo-id"
+      },
+      "href" : "https://api.spotify.com/v1/artists/foo-id",
+      "id" : "foo-id",
+      "name" : "foo",
+      "type" : "artist",
+      "uri" : "spotify:artist:foo-id"
+    } ],
+    "available_markets" : [ "SG" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/baz-album"
+    },
+    "href" : "https://api.spotify.com/v1/albums/baz-album",
+    "id" : "baz-album",
+    "images" : [ {
+      "height" : 629,
+      "url" : "https://img.cdn/baz-album/1",
+      "width" : 640
+    }, {
+      "height" : 295,
+      "url" : "https://img.cdn/baz-album/2",
+      "width" : 300
+    } ],
+    "name" : "Baz, The Album",
+    "type" : "album",
+    "uri" : "spotify:album:baz-album"
+  }],
+  "limit" : 2,
+  "next" : null,
+  "offset" : 2,
+  "previous" : null,
+  "total" : 3
+}

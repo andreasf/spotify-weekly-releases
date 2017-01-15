@@ -1,0 +1,64 @@
+{
+  "artists" : {
+    "items" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/foo-id"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 36334
+      },
+      "genres" : [ "garage rock", "neo-psychedelic", "punk blues", "space rock", "stoner rock", "vancouver indie" ],
+      "href" : "https://api.spotify.com/v1/artists/foo-id",
+      "id" : "foo-id",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://image.cdn/foo/1",
+        "width" : 640
+      }, {
+        "height" : 320,
+        "url" : "https://image.cdn/foo/2",
+        "width" : 320
+      }, {
+        "height" : 160,
+        "url" : "https://image.cdn/foo/3",
+        "width" : 160
+      } ],
+      "name" : "foo",
+      "popularity" : 45,
+      "type" : "artist",
+      "uri" : "spotify:artist:foo-id"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/bar-id"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 323
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/03DDDfXOjkqWelBJntrTpX",
+      "id" : "bar-id",
+      "images" : [ {
+        "height" : 235,
+        "url" : "https://image.cdn/bar/1",
+        "width" : 235
+      }, {
+        "height" : 4242,
+        "url" : "https://image.cdn/bar/2",
+        "width" : 4242
+      }],
+      "name" : "bar",
+      "popularity" : 26,
+      "type" : "artist",
+      "uri" : "spotify:artist:bar-id"
+    } ],
+    "next" : "${API_PREFIX}/v1/me/following?type=artist&after=bar-id&limit=20",
+    "total" : 3,
+    "cursors" : {
+      "after" : "bar-id"
+    },
+    "limit" : 2,
+    "href" : "${API_PREFIX}/v1/me/following?type=artist&limit=2"
+  }
+}

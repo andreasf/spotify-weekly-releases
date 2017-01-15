@@ -1,0 +1,69 @@
+{
+  "href" : "https://api.spotify.com/v1/artists/foo-id/albums?offset=0&limit=2&album_type=single,album,compilation,appears_on,ep",
+  "items" : [ {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/foo-id"
+      },
+      "href" : "https://api.spotify.com/v1/artists/foo-id",
+      "id" : "foo-id",
+      "name" : "foo",
+      "type" : "artist",
+      "uri" : "spotify:artist:foo-id"
+    } ],
+    "available_markets" : [ "SG" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/foo-album"
+    },
+    "href" : "https://api.spotify.com/v1/albums/foo-album",
+    "id" : "foo-album",
+    "images" : [ {
+      "height" : 629,
+      "url" : "https://img.cdn/foo-album/1",
+      "width" : 640
+    }, {
+      "height" : 295,
+      "url" : "https://img.cdn/foo-album/2",
+      "width" : 300
+    } ],
+    "name" : "Foo, The Album",
+    "type" : "album",
+    "uri" : "spotify:album:foo-album"
+  }, {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/foo-id"
+      },
+      "href" : "https://api.spotify.com/v1/artists/foo-id",
+      "id" : "foo-id",
+      "name" : "foo",
+      "type" : "artist",
+      "uri" : "spotify:artist:foo-id"
+    } ],
+    "available_markets" : [ "CA", "MX", "US" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/bar-album"
+    },
+    "href" : "https://api.spotify.com/v1/albums/bar-album",
+    "id" : "bar-album",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://img.cdn/bar-album/1",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://img.cdn/bar-album/1",
+      "width" : 300
+    } ],
+    "name" : "Bar, The Album",
+    "type" : "album",
+    "uri" : "spotify:album:bar-album"
+  } ],
+  "limit" : 2,
+  "next" : "${API_PREFIX}/v1/artists/foo-id/albums?offset=2&limit=2&album_type=single,album,compilation,appears_on,ep",
+  "offset" : 0,
+  "previous" : null,
+  "total" : 3
+}
