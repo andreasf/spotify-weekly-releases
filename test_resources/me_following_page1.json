@@ -1,0 +1,72 @@
+{
+  "artists" : {
+    "items" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/foo-id"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 36334
+      },
+      "genres" : [ "garage rock", "neo-psychedelic", "punk blues", "space rock", "stoner rock", "vancouver indie" ],
+      "href" : "https://api.spotify.com/v1/artists/foo-id",
+      "id" : "foo-id",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ad11b0c5170fb5891c7f0c3404c139e8a6a42996",
+        "width" : 640
+      }, {
+        "height" : 320,
+        "url" : "https://i.scdn.co/image/e4a39bd208503a3d5d51545a8dabd5b785219426",
+        "width" : 320
+      }, {
+        "height" : 160,
+        "url" : "https://i.scdn.co/image/0b27fbcddc2dd2ca0bfd8bdac1a7c3bace475e68",
+        "width" : 160
+      } ],
+      "name" : "foo",
+      "popularity" : 45,
+      "type" : "artist",
+      "uri" : "spotify:artist:foo-id"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/bar-id"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 323
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/03DDDfXOjkqWelBJntrTpX",
+      "id" : "bar-id",
+      "images" : [ {
+        "height" : 913,
+        "url" : "https://i.scdn.co/image/212e46577b725eeb768063faf9560563a7385646",
+        "width" : 1000
+      }, {
+        "height" : 584,
+        "url" : "https://i.scdn.co/image/39b436e3e340541510878f29ed451879f4e405fa",
+        "width" : 640
+      }, {
+        "height" : 183,
+        "url" : "https://i.scdn.co/image/757b5873630c142c1e5f937028e8a2f55e67f389",
+        "width" : 200
+      }, {
+        "height" : 58,
+        "url" : "https://i.scdn.co/image/21d6eb7a1fcefcd72366af9d1d70a123360264b8",
+        "width" : 64
+      } ],
+      "name" : "bar",
+      "popularity" : 26,
+      "type" : "artist",
+      "uri" : "spotify:artist:bar-id"
+    } ],
+    "next" : "${API_PREFIX}/v1/me/following?type=artist&after=bar-id&limit=20",
+    "total" : 3,
+    "cursors" : {
+      "after" : "bar-id"
+    },
+    "limit" : 2,
+    "href" : "${API_PREFIX}/v1/me/following?type=artist&limit=2"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "artists": {
+    "items": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/baz-id"
+        },
+        "followers": {
+          "href": null,
+          "total": 7900
+        },
+        "genres": [
+          "contemporary jazz",
+          "contemporary post-bop",
+          "jazz fusion",
+          "swedish jazz"
+        ],
+        "href": "https://api.spotify.com/v1/artists/baz-id",
+        "id": "baz-id",
+        "images": [
+          {
+            "height": 500,
+            "url": "https://i.scdn.co/image/ccafee9466aaf9a386497a8e687beed175cf04d1",
+            "width": 500
+          },
+          {
+            "height": 200,
+            "url": "https://i.scdn.co/image/fe5bfcc32afc1f2e2201ac8f7965842041db0e17",
+            "width": 200
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/11da371054015df06cd8489a8d37ee38ad1c76e6",
+            "width": 64
+          }
+        ],
+        "name": "baz",
+        "popularity": 34,
+        "type": "artist",
+        "uri": "spotify:artist:baz-id"
+      }
+    ],
+    "next": null,
+    "total": 3,
+    "cursors": {
+      "after": null
+    },
+    "limit": 2,
+    "href": "${API_PREFIX}/v1/me/following?type=artist&after=bar-id&limit=2"
+  }
+}
