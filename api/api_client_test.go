@@ -1,12 +1,12 @@
 package api_test
 
 import (
-	. "github.com/andreasf/release-feed/api"
+	. "github.com/andreasf/spotify-release-feed/api"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"github.com/onsi/gomega/ghttp"
-	"github.com/andreasf/release-feed/test_resources"
+	"github.com/andreasf/spotify-release-feed/test_resources"
 )
 
 var _ = Describe("SpotifyApiClient", func() {
