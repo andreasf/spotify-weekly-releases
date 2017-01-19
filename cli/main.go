@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/andreasf/spotify-release-feed/api"
-	"github.com/andreasf/spotify-release-feed/cache"
-	"github.com/andreasf/spotify-release-feed/model"
-	"github.com/andreasf/spotify-release-feed/platform"
-	"github.com/andreasf/spotify-release-feed/services"
+	"github.com/andreasf/spotify-weekly-releases/api"
+	"github.com/andreasf/spotify-weekly-releases/cache"
+	"github.com/andreasf/spotify-weekly-releases/model"
+	"github.com/andreasf/spotify-weekly-releases/platform"
+	"github.com/andreasf/spotify-weekly-releases/services"
 	"os"
 	"time"
 )

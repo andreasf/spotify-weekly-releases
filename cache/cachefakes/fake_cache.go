@@ -4,7 +4,7 @@ package cachefakes
 import (
 	"sync"
 
-	"github.com/andreasf/spotify-release-feed/cache"
+	"github.com/andreasf/spotify-weekly-releases/cache"
 )
 
 type FakeCache struct {

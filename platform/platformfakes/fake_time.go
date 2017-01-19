@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/andreasf/spotify-release-feed/platform"
+	"github.com/andreasf/spotify-weekly-releases/platform"
 )
 
 type FakeTime struct {

@@ -2,8 +2,8 @@ package services
 
 import (
 	"fmt"
-	"github.com/andreasf/spotify-release-feed/api"
-	"github.com/andreasf/spotify-release-feed/model"
+	"github.com/andreasf/spotify-weekly-releases/api"
+	"github.com/andreasf/spotify-weekly-releases/model"
 )
 
 type SpotifyService interface {

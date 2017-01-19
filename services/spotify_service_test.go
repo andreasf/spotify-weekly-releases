@@ -1,10 +1,10 @@
 package services_test
 
 import (
-	. "github.com/andreasf/spotify-release-feed/services"
+	. "github.com/andreasf/spotify-weekly-releases/services"
 
-	"github.com/andreasf/spotify-release-feed/api/apifakes"
-	"github.com/andreasf/spotify-release-feed/model"
+	"github.com/andreasf/spotify-weekly-releases/api/apifakes"
+	"github.com/andreasf/spotify-weekly-releases/model"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"strconv"

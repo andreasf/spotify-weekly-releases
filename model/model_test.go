@@ -1,7 +1,7 @@
 package model_test
 
 import (
-	. "github.com/andreasf/spotify-release-feed/model"
+	. "github.com/andreasf/spotify-weekly-releases/model"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

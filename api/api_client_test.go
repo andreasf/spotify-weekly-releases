@@ -1,15 +1,15 @@
 package api_test
 
 import (
-	. "github.com/andreasf/spotify-release-feed/api"
+	. "github.com/andreasf/spotify-weekly-releases/api"
 
 	json2 "encoding/json"
 	"errors"
-	"github.com/andreasf/spotify-release-feed/cache/cachefakes"
-	"github.com/andreasf/spotify-release-feed/json"
-	"github.com/andreasf/spotify-release-feed/model"
-	"github.com/andreasf/spotify-release-feed/platform/platformfakes"
-	"github.com/andreasf/spotify-release-feed/test_resources"
+	"github.com/andreasf/spotify-weekly-releases/cache/cachefakes"
+	"github.com/andreasf/spotify-weekly-releases/json"
+	"github.com/andreasf/spotify-weekly-releases/model"
+	"github.com/andreasf/spotify-weekly-releases/platform/platformfakes"
+	"github.com/andreasf/spotify-weekly-releases/test_resources"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"github.com/onsi/gomega/ghttp"

@@ -1,7 +1,7 @@
 package cache_test
 
 import (
-	. "github.com/andreasf/spotify-release-feed/cache"
+	. "github.com/andreasf/spotify-weekly-releases/cache"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

@@ -1,11 +1,11 @@
 package json_test
 
 import (
-	. "github.com/andreasf/spotify-release-feed/json"
+	. "github.com/andreasf/spotify-weekly-releases/json"
 
 	"encoding/json"
-	"github.com/andreasf/spotify-release-feed/model"
-	"github.com/andreasf/spotify-release-feed/test_resources"
+	"github.com/andreasf/spotify-weekly-releases/model"
+	"github.com/andreasf/spotify-weekly-releases/test_resources"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

@@ -1,7 +1,7 @@
 package json
 
 import (
-	"github.com/andreasf/spotify-release-feed/model"
+	"github.com/andreasf/spotify-weekly-releases/model"
 )
 
 type FollowedArtists struct {
