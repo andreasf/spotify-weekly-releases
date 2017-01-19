@@ -1,7 +1,7 @@
 # Weekly Releases
 
-[![Build Status](https://travis-ci.org/andreasf/cf-mysql-plugin.svg?branch=master)](https://travis-ci.org/andreasf/cf-mysql-plugin)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/andreasf/cf-mysql-plugin/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/andreasf/spotify-weekly-releases.svg?branch=master)](https://travis-ci.org/andreasf/spotify-weekly-releases)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/andreasf/spotify-weekly-releases/blob/master/LICENSE)
 
 Weekly Releases is a weekly playlist that you can subscribe to. It is created from new releases by artists that you follow on Spotify. After subscribing, check "Playlists" in your Spotify account.
 
