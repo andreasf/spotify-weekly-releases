@@ -5,6 +5,10 @@
 
 Weekly Releases is a weekly playlist that you can subscribe to. It is created from new releases by artists that you follow on Spotify. After subscribing, check "Playlists" in your Spotify account.
 
+# Why?
+
+Spotify has good recommendations, but sometimes I just want to know about new releases from artists I already know. Spotify used to have built-in notifications for this purpose. The feature has mostly been removed from the clients. Currently, what's left is push notifications and emails, which don't seem to work for me.
+
 # Running the web app
 
 TBD
