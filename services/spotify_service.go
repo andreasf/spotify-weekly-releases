@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"github.com/andreasf/spotify-weekly-releases/api"
 	"github.com/andreasf/spotify-weekly-releases/model"
+	"github.com/andreasf/spotify-weekly-releases/platform"
+	"time"
 )
 
 type SpotifyService interface {
@@ -13,13 +15,15 @@ type SpotifyService interface {
 
 type SpotifyServiceImpl struct {
 	apiClient api.SpotifyConnector
+	timeWrapper platform.Time
 }
 
 const ALBUMS_PER_REQUEST int = 20
 
-func NewSpotifyService(apiClient api.SpotifyConnector) *SpotifyServiceImpl {
+func NewSpotifyService(apiClient api.SpotifyConnector, timeWrapper platform.Time) *SpotifyServiceImpl {
 	return &SpotifyServiceImpl{
 		apiClient: apiClient,
+		timeWrapper: timeWrapper,
 	}
 }
 
@@ -65,7 +69,22 @@ func (self *SpotifyServiceImpl) GetRecentReleases(accessToken string) ([]model.A
 		albumDetails = append(albumDetails, albumInfos...)
 	}
 
-	return albumDetails, nil
+	return self.filterByReleaseDate(albumDetails), nil
+}
+
+func (self *SpotifyServiceImpl) filterByReleaseDate(albums []model.Album) []model.Album {
+	filteredAlbums := make([]model.Album, 0, len(albums))
+
+	oneYearAgoDate := self.timeWrapper.Now().Add(time.Hour * 24 * (-365))
+	oneYearAgo := oneYearAgoDate.Format("2006-01-02")
+
+	for _, album := range albums {
+		if album.ReleaseDate >= oneYearAgo {
+			filteredAlbums = append(filteredAlbums, album)
+		}
+	}
+
+	return filteredAlbums
 }
 
 func (self *SpotifyServiceImpl) CreatePlaylist(accessToken string, name string, tracks []model.Track) error {

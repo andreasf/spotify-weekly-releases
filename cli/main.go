@@ -22,7 +22,7 @@ func main() {
 	timeWrapper := &platform.TimeWrapper{}
 	cache := cache.NewDiskCache("cache")
 	apiClient := api.NewSpotifyApiClient("https://api.spotify.com", timeWrapper, cache)
-	service := services.NewSpotifyService(apiClient)
+	service := services.NewSpotifyService(apiClient, timeWrapper)
 
 	albums, err := service.GetRecentReleases(accessToken)
 	if err != nil {

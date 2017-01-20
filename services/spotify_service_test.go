@@ -8,6 +8,8 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"strconv"
+	"github.com/andreasf/spotify-weekly-releases/platform/platformfakes"
+	"time"
 )
 
 var _ = Describe("SpotifyService", func() {
@@ -17,6 +19,8 @@ var _ = Describe("SpotifyService", func() {
 		var fooAlbumInfo model.Album
 		var client *apifakes.FakeSpotifyConnector
 		var service *SpotifyServiceImpl
+		var timeWrapper *platformfakes.FakeTime
+		var oldAlbumList []model.Album
 
 		BeforeEach(func() {
 			expectedAlbums = []model.Album{
@@ -24,6 +28,23 @@ var _ = Describe("SpotifyService", func() {
 					Name:        "foo-album",
 					Id:          "foo-album-id",
 					ReleaseDate: "2017-01-01",
+				},
+			}
+			oldAlbumList = []model.Album{
+				{
+					Name:        "just 1 day too old. 2016 was a leap year.",
+					Id:          "baz-album-id",
+					ReleaseDate: "2016-01-01",
+				},
+				{
+					Name:        "one year ago",
+					Id:          "foo-album-id",
+					ReleaseDate: "2016-01-02",
+				},
+				{
+					Name:        "way too old",
+					Id:          "bar-album-id",
+					ReleaseDate: "2013-05-23",
 				},
 			}
 			followedArtists = []model.Artist{
@@ -49,7 +70,12 @@ var _ = Describe("SpotifyService", func() {
 				Country: "market-id",
 			}, nil)
 
-			service = NewSpotifyService(client)
+			timeWrapper = &platformfakes.FakeTime{}
+			now, err := time.Parse("Mon Jan 2 15:04:05 -0700 MST 2006", "Sun Jan 1 00:00:00 +0000 UTC 2017")
+			Expect(err).To(BeNil())
+			timeWrapper.NowReturns(now)
+
+			service = NewSpotifyService(client, timeWrapper)
 		})
 
 		It("Gets the user profile in order to filter by country", func() {
@@ -62,7 +88,7 @@ var _ = Describe("SpotifyService", func() {
 		})
 
 		It("Returns a list of recent releases for the user's market", func() {
-			service := NewSpotifyService(client)
+			service := NewSpotifyService(client, timeWrapper)
 
 			albums, err := service.GetRecentReleases("access-token")
 
@@ -117,15 +143,25 @@ var _ = Describe("SpotifyService", func() {
 			Expect(ids2).To(Equal(albumIds[20:]))
 		})
 
-		//It("Does not return releases older than a year", func() {
-		//	Fail("not implemented")
-		//})
+		It("Does not return releases older than a year", func() {
+			client.GetArtistAlbumsReturns(oldAlbumList, nil)
+			client.GetAlbumInfoReturns(oldAlbumList, nil)
+
+			albums, err := service.GetRecentReleases("access-token")
+			Expect(err).To(BeNil())
+
+			Expect(albums).To(HaveLen(1))
+			Expect(albums[0].Id).To(Equal("foo-album-id"))
+
+			Expect(timeWrapper.NowCallCount()).To(Equal(1))
+		})
 	})
 
 	Describe("CreatePlaylist", func() {
 		var tracks []model.Track
 		var client *apifakes.FakeSpotifyConnector
 		var service *SpotifyServiceImpl
+		var timeWrapper *platformfakes.FakeTime
 
 		BeforeEach(func() {
 			tracks = []model.Track{
@@ -141,7 +177,8 @@ var _ = Describe("SpotifyService", func() {
 			}
 
 			client = &apifakes.FakeSpotifyConnector{}
-			service = NewSpotifyService(client)
+			timeWrapper = &platformfakes.FakeTime{}
+			service = NewSpotifyService(client, timeWrapper)
 
 			user := model.UserProfile{
 				Id: "my-user-id",

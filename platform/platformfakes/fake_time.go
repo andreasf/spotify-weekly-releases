@@ -14,6 +14,12 @@ type FakeTime struct {
 	sleepArgsForCall []struct {
 		d time.Duration
 	}
+	NowStub        func() time.Time
+	nowMutex       sync.RWMutex
+	nowArgsForCall []struct{}
+	nowReturns     struct {
+		result1 time.Time
+	}
 	invocations      map[string][][]interface{}
 	invocationsMutex sync.RWMutex
 }
@@ -42,11 +48,37 @@ func (fake *FakeTime) SleepArgsForCall(i int) time.Duration {
 	return fake.sleepArgsForCall[i].d
 }
 
+func (fake *FakeTime) Now() time.Time {
+	fake.nowMutex.Lock()
+	fake.nowArgsForCall = append(fake.nowArgsForCall, struct{}{})
+	fake.recordInvocation("Now", []interface{}{})
+	fake.nowMutex.Unlock()
+	if fake.NowStub != nil {
+		return fake.NowStub()
+	}
+	return fake.nowReturns.result1
+}
+
+func (fake *FakeTime) NowCallCount() int {
+	fake.nowMutex.RLock()
+	defer fake.nowMutex.RUnlock()
+	return len(fake.nowArgsForCall)
+}
+
+func (fake *FakeTime) NowReturns(result1 time.Time) {
+	fake.NowStub = nil
+	fake.nowReturns = struct {
+		result1 time.Time
+	}{result1}
+}
+
 func (fake *FakeTime) Invocations() map[string][][]interface{} {
 	fake.invocationsMutex.RLock()
 	defer fake.invocationsMutex.RUnlock()
 	fake.sleepMutex.RLock()
 	defer fake.sleepMutex.RUnlock()
+	fake.nowMutex.RLock()
+	defer fake.nowMutex.RUnlock()
 	return fake.invocations
 }
 
