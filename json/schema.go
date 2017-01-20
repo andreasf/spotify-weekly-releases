@@ -54,9 +54,15 @@ type ArtistAlbum struct {
 }
 
 func (self ArtistAlbum) ToModel() model.Album {
+	artistIds := make([]string, 0, len(self.Artists))
+
+	for _, artist := range self.Artists {
+		artistIds = append(artistIds, artist.Id)
+	}
+
 	return model.Album{
 		Id:          self.Id,
-		ArtistId:    self.Artists[0].Id,
+		ArtistIds:   artistIds,
 		Name:        self.Name,
 		ReleaseDate: self.ReleaseDate,
 		Markets:     self.AvailableMarkets,
@@ -144,4 +150,14 @@ type CreatePlaylistResponse struct {
 
 type AddTracksRequest struct {
 	Uris []string `json:"uris"`
+}
+
+type PaginatedSavedAlbums struct {
+	Items []SavedAlbum `json:"items"`
+	Next  string       `json:"next"`
+}
+
+type SavedAlbum struct {
+	AddedAt string      `json:"added_at"`
+	Album   ArtistAlbum `json:"album"`
 }

@@ -21,12 +21,13 @@ const TRACKS_PER_REQUEST int = 100
 
 //go:generate counterfeiter . SpotifyConnector
 type SpotifyConnector interface {
-	GetFollowedArtists(accessToken string) ([]model.Artist, error)
-	GetArtistAlbums(accessToken, artistId string, market string) ([]model.Album, error)
-	GetAlbumInfo(accessToken string, albumIds []string) ([]model.Album, error)
-	GetUserProfile(accessToken string) (model.UserProfile, error)
-	CreatePlaylist(accessToken, userId, name string) (string, error)
 	AddTracksToPlaylist(accessToken, userId, playlistId string, tracks []model.Track) error
+	CreatePlaylist(accessToken, userId, name string) (string, error)
+	GetAlbumInfo(accessToken string, albumIds []string) ([]model.Album, error)
+	GetArtistAlbums(accessToken, artistId string, market string) ([]model.Album, error)
+	GetFollowedArtists(accessToken string) ([]model.Artist, error)
+	GetSavedAlbums(accessToken string) ([]model.Album, error)
+	GetUserProfile(accessToken string) (model.UserProfile, error)
 }
 
 type SpotifyApiClient struct {
@@ -299,6 +300,32 @@ func (self *SpotifyApiClient) AddTracksToPlaylist(accessToken, userId, playlistI
 	}
 
 	return nil
+}
+
+func (self *SpotifyApiClient) GetSavedAlbums(accessToken string) ([]model.Album, error) {
+	albums := []model.Album{}
+	nextUrl := self.urlPrefix + "/v1/me/albums?limit=50"
+
+	for nextUrl != "" {
+		contents, err := self.getWithRateLimiting(accessToken, nextUrl)
+		if err != nil {
+			return nil, fmt.Errorf("GetSavedAlbums: request error: %v", err)
+		}
+
+		savedAlbums := json2.PaginatedSavedAlbums{}
+		err = json.Unmarshal(contents, &savedAlbums)
+		if err != nil {
+			return nil, fmt.Errorf("GetSavedAlbums: error deserializing JSON: %v", err)
+		}
+
+		nextUrl = savedAlbums.Next
+
+		for _, savedAlbum := range savedAlbums.Items {
+			albums = append(albums, savedAlbum.Album.ToModel())
+		}
+	}
+
+	return albums, nil
 }
 
 func min(a, b int) int {

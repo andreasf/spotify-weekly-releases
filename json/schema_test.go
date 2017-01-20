@@ -136,24 +136,24 @@ var _ = Describe("Schema", func() {
 			Id:          "49MNmJhZQewjt06rpwp6QR",
 			ReleaseDate: "1998-04-20",
 			Markets:     []string{"AB", "CD"},
-			ArtistId:    "6FXMGgJwohJLUSr5nVlf9X",
+			ArtistIds:   []string{"6FXMGgJwohJLUSr5nVlf9X"},
 			Tracks: []model.Track{
 				{
 					Name:       "Angel",
 					Id:         "7uv632EkfwYhXoqf8rhYrg",
-					ArtistId: "6FXMGgJwohJLUSr5nVlf9X",
+					ArtistId:   "6FXMGgJwohJLUSr5nVlf9X",
 					DurationMs: 379533,
 				},
 				{
 					Name:       "Risingson",
 					Id:         "6ggJ6MceyHGWtUg1KLp3M1",
-					ArtistId: "6FXMGgJwohJLUSr5nVlf9X",
+					ArtistId:   "6FXMGgJwohJLUSr5nVlf9X",
 					DurationMs: 298826,
 				},
 				{
 					Name:       "Teardrop",
 					Id:         "67Hna13dNDkZvBpTXRIaOJ",
-					ArtistId: "6FXMGgJwohJLUSr5nVlf9X",
+					ArtistId:   "6FXMGgJwohJLUSr5nVlf9X",
 					DurationMs: 330773,
 				},
 			},
@@ -193,6 +193,18 @@ var _ = Describe("Schema", func() {
 		Expect(response.Id).To(Equal("playlist-id"))
 	})
 
+	It("Deserialized the saved albums response", func() {
+		rawJson := test_resources.LoadResource("../test_resources/saved_albums_page1.json")
+		response := PaginatedSavedAlbums{}
+
+		err := json.Unmarshal(rawJson, &response)
+
+		Expect(err).To(BeNil())
+		Expect(response.Next).To(Equal("${API_PREFIX}/v1/me/albums?offset=2&limit=2"))
+		Expect(response.Items).To(HaveLen(2))
+		Expect(response.Items[0].AddedAt).To(Equal("2016-11-20T10:14:43Z"))
+		Expect(response.Items[0].Album.Id).To(Equal("4xjys0dhhX8AD2Oiz5Y5S6"))
+	})
 })
 
 var blackRadio ArtistAlbum = ArtistAlbum{

@@ -1,0 +1,214 @@
+{
+  "href" : "https://api.spotify.com/v1/me/albums?offset=0&limit=2",
+  "items" : [ {
+    "added_at" : "2016-11-20T10:14:43Z",
+    "album" : {
+      "album_type" : "album",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/22KzEvCtrTGf9l6k7zFcdv"
+        },
+        "href" : "https://api.spotify.com/v1/artists/22KzEvCtrTGf9l6k7zFcdv",
+        "id" : "22KzEvCtrTGf9l6k7zFcdv",
+        "name" : "Aaron Parks",
+        "type" : "artist",
+        "uri" : "spotify:artist:22KzEvCtrTGf9l6k7zFcdv"
+      }, {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/2GWMZZQNuU0VZra0suXVph"
+        },
+        "href" : "https://api.spotify.com/v1/artists/2GWMZZQNuU0VZra0suXVph",
+        "id" : "2GWMZZQNuU0VZra0suXVph",
+        "name" : "Thomas Fonnesbæk",
+        "type" : "artist",
+        "uri" : "spotify:artist:2GWMZZQNuU0VZra0suXVph"
+      }, {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/1eLFONDpKa9ArYaoVjDrKE"
+        },
+        "href" : "https://api.spotify.com/v1/artists/1eLFONDpKa9ArYaoVjDrKE",
+        "id" : "1eLFONDpKa9ArYaoVjDrKE",
+        "name" : "Karsten Bagge",
+        "type" : "artist",
+        "uri" : "spotify:artist:1eLFONDpKa9ArYaoVjDrKE"
+      } ],
+      "available_markets" : [ "AD", "AR"],
+      "copyrights" : [ {
+        "text" : "(C) 2016 Sundance Music Ltd.",
+        "type" : "C"
+      } ],
+      "external_ids" : {
+        "upc" : "663993151526"
+      },
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/4xjys0dhhX8AD2Oiz5Y5S6"
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/albums/4xjys0dhhX8AD2Oiz5Y5S6",
+      "id" : "4xjys0dhhX8AD2Oiz5Y5S6",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ecb17d8588ac4cb2e76224c2bae032454ae561d1",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/19fbd3f28d76174ff4b4a96cdb44a186e369c654",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/10c9dcc7d5935a2ca5d83e4db39fe13c2c4b1a45",
+        "width" : 64
+      } ],
+      "label" : "Stunt Records",
+      "name" : "Groovements",
+      "popularity" : 30,
+      "release_date" : "2016-04-15",
+      "release_date_precision" : "day",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/albums/4xjys0dhhX8AD2Oiz5Y5S6/tracks?offset=0&limit=50",
+        "items" : [ {
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/2GWMZZQNuU0VZra0suXVph"
+            },
+            "href" : "https://api.spotify.com/v1/artists/2GWMZZQNuU0VZra0suXVph",
+            "id" : "2GWMZZQNuU0VZra0suXVph",
+            "name" : "Thomas Fonnesbæk",
+            "type" : "artist",
+            "uri" : "spotify:artist:2GWMZZQNuU0VZra0suXVph"
+          }, {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/22KzEvCtrTGf9l6k7zFcdv"
+            },
+            "href" : "https://api.spotify.com/v1/artists/22KzEvCtrTGf9l6k7zFcdv",
+            "id" : "22KzEvCtrTGf9l6k7zFcdv",
+            "name" : "Aaron Parks",
+            "type" : "artist",
+            "uri" : "spotify:artist:22KzEvCtrTGf9l6k7zFcdv"
+          }, {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/1eLFONDpKa9ArYaoVjDrKE"
+            },
+            "href" : "https://api.spotify.com/v1/artists/1eLFONDpKa9ArYaoVjDrKE",
+            "id" : "1eLFONDpKa9ArYaoVjDrKE",
+            "name" : "Karsten Bagge",
+            "type" : "artist",
+            "uri" : "spotify:artist:1eLFONDpKa9ArYaoVjDrKE"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HN", "HU", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "NI", "NL", "NO", "NZ", "PA", "PE", "PL", "PT", "PY", "SE", "SK", "SV", "US", "UY" ],
+          "disc_number" : 1,
+          "duration_ms" : 304493,
+          "explicit" : false,
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/track/6YeQJTy8BAiTdDUooihG9p"
+          },
+          "href" : "https://api.spotify.com/v1/tracks/6YeQJTy8BAiTdDUooihG9p",
+          "id" : "6YeQJTy8BAiTdDUooihG9p",
+          "name" : "Winter",
+          "preview_url" : "https://p.scdn.co/mp3-preview/59f851bd018a25180df472d68bd75089c2b66198?cid=8897482848704f2a8f8d7c79726a70d4",
+          "track_number" : 1,
+          "type" : "track",
+          "uri" : "spotify:track:6YeQJTy8BAiTdDUooihG9p"
+        }],
+        "limit" : 50,
+        "next" : null,
+        "offset" : 0,
+        "previous" : null,
+        "total" : 10
+      },
+      "type" : "album",
+      "uri" : "spotify:album:4xjys0dhhX8AD2Oiz5Y5S6"
+    }
+  }, {
+    "added_at" : "2014-08-02T11:39:43Z",
+    "album" : {
+      "album_type" : "album",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/22KzEvCtrTGf9l6k7zFcdv"
+        },
+        "href" : "https://api.spotify.com/v1/artists/22KzEvCtrTGf9l6k7zFcdv",
+        "id" : "22KzEvCtrTGf9l6k7zFcdv",
+        "name" : "Aaron Parks",
+        "type" : "artist",
+        "uri" : "spotify:artist:22KzEvCtrTGf9l6k7zFcdv"
+      } ],
+      "available_markets" : [ "AD", "AR"],
+      "copyrights" : [ {
+        "text" : "(C) 2008 The Blue Note Label Group",
+        "type" : "C"
+      }, {
+        "text" : "(P) (C) 2008 The Blue Note Label Group. All rights reserved. Unauthorized reproduction is a violation of applicable laws. Manufactured by Blue Note Records, 150 Fifth Avenue, New York, NY 10011.",
+        "type" : "P"
+      } ],
+      "external_ids" : {
+        "upc" : "05099950901050"
+      },
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/3xfueIrMUw57owAiYVKt8S"
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/albums/3xfueIrMUw57owAiYVKt8S",
+      "id" : "3xfueIrMUw57owAiYVKt8S",
+      "images" : [ {
+        "height" : 600,
+        "url" : "https://i.scdn.co/image/d9adb7e2db29ec51b54f3dba40049a7a4efaaf29",
+        "width" : 600
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/5f23cf50244414d49370b314c2a0082a11d96d35",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/5651d7491eda845ebfcdf07d4eda48518ca07c59",
+        "width" : 64
+      } ],
+      "label" : "Blue Note Records",
+      "name" : "Invisible Cinema",
+      "popularity" : 40,
+      "release_date" : "2008-08-19",
+      "release_date_precision" : "day",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/albums/3xfueIrMUw57owAiYVKt8S/tracks?offset=0&limit=50",
+        "items" : [ {
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/22KzEvCtrTGf9l6k7zFcdv"
+            },
+            "href" : "https://api.spotify.com/v1/artists/22KzEvCtrTGf9l6k7zFcdv",
+            "id" : "22KzEvCtrTGf9l6k7zFcdv",
+            "name" : "Aaron Parks",
+            "type" : "artist",
+            "uri" : "spotify:artist:22KzEvCtrTGf9l6k7zFcdv"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+          "disc_number" : 1,
+          "duration_ms" : 334880,
+          "explicit" : false,
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/track/5vRHlju25fl2hY0IPwTLbS"
+          },
+          "href" : "https://api.spotify.com/v1/tracks/5vRHlju25fl2hY0IPwTLbS",
+          "id" : "5vRHlju25fl2hY0IPwTLbS",
+          "name" : "Travelers",
+          "preview_url" : "https://p.scdn.co/mp3-preview/d972c146f72331aa4c1b2afb4bf2cef2b23ac136?cid=8897482848704f2a8f8d7c79726a70d4",
+          "track_number" : 1,
+          "type" : "track",
+          "uri" : "spotify:track:5vRHlju25fl2hY0IPwTLbS"
+        } ],
+        "limit" : 50,
+        "next" : null,
+        "offset" : 0,
+        "previous" : null,
+        "total" : 10
+      },
+      "type" : "album",
+      "uri" : "spotify:album:3xfueIrMUw57owAiYVKt8S"
+    }
+  } ],
+  "limit" : 2,
+  "next" : "${API_PREFIX}/v1/me/albums?offset=2&limit=2",
+  "offset" : 0,
+  "previous" : null,
+  "total" : 3
+}

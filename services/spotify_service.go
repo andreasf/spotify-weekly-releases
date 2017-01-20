@@ -33,21 +33,71 @@ func (self *SpotifyServiceImpl) GetRecentReleases(accessToken string) ([]model.A
 		return nil, fmt.Errorf("GetRecentReleases: error retrieving user profile: %v", err)
 	}
 
-	artists, err := self.apiClient.GetFollowedArtists(accessToken)
+	var artists model.ArtistList
+	artists, err = self.apiClient.GetFollowedArtists(accessToken)
 	if err != nil {
 		return nil, fmt.Errorf("GetRecentReleases: error retrieving followed artists: %v", err)
 	}
 
-	albums := []model.Album{}
-	for _, artist := range artists {
-		artistAlbums, err := self.apiClient.GetArtistAlbums(accessToken, artist.Id, profile.Country)
-		if err != nil {
-			return nil, fmt.Errorf("GetRecentReleases: error retrieving artistAlbums for %s: %v", artist.Id, err)
-		}
+	artistIds := artists.GetIds()
 
-		albums = append(albums, artistAlbums...)
+	var savedAlbums model.AlbumList
+	savedAlbums, err = self.apiClient.GetSavedAlbums(accessToken)
+	if err != nil {
+		return nil, fmt.Errorf("GetRecentReleases: error retrieving saved albums: %v", err)
 	}
 
+	artistIds = append(artistIds, savedAlbums.GetArtistIds()...)
+
+	var albums model.AlbumList
+	albums, err = self.getAlbumsForArtists(accessToken, profile.Country, artistIds)
+	if err != nil {
+		return nil, fmt.Errorf("GetRecentReleases: %v", err)
+	}
+
+	albums = albums.Remove(savedAlbums)
+
+	albumDetails, err := self.getAlbumDetails(accessToken, albums)
+	if err != nil {
+		return nil, fmt.Errorf("GetRecentReleases: %v", err)
+	}
+
+	return self.filterByReleaseDate(albumDetails), nil
+}
+
+func (self *SpotifyServiceImpl) getAlbumsForArtists(accessToken string, country string, artistIds []string) ([]model.Album, error) {
+	visitedArtists := make(map[string]bool)
+	visitedAlbums := make(map[string]bool)
+	albums := []model.Album{}
+
+	for _, artistId := range artistIds {
+		_, visited := visitedArtists[artistId]
+		if visited {
+			continue
+		}
+
+		artistAlbums, err := self.apiClient.GetArtistAlbums(accessToken, artistId, country)
+		if err != nil {
+			return nil, fmt.Errorf("getAlbumsForArtists: error retrieving artistAlbums for %s: %v", artistId, err)
+		}
+
+		for _, album := range artistAlbums {
+			_, visited := visitedAlbums[album.Id]
+			if visited {
+				continue
+			}
+
+			albums = append(albums, album)
+			visitedAlbums[album.Id] = true
+		}
+
+		visitedArtists[artistId] = true
+	}
+
+	return albums, nil
+}
+
+func (self *SpotifyServiceImpl) getAlbumDetails(accessToken string, albums []model.Album) ([]model.Album, error) {
 	albumDetails := make([]model.Album, 0, len(albums))
 
 	numberOfRequests := len(albums) / ALBUMS_PER_REQUEST
@@ -63,13 +113,13 @@ func (self *SpotifyServiceImpl) GetRecentReleases(accessToken string) ([]model.A
 
 		albumInfos, err := self.apiClient.GetAlbumInfo(accessToken, albumIds)
 		if err != nil {
-			return nil, fmt.Errorf("GetRecentReleases: error retrieving album infos for %s: %v", albumIds, err)
+			return nil, fmt.Errorf("getAlbumDetails: error retrieving album infos for %s: %v", albumIds, err)
 		}
 
 		albumDetails = append(albumDetails, albumInfos...)
 	}
 
-	return self.filterByReleaseDate(albumDetails), nil
+	return albumDetails, nil
 }
 
 func (self *SpotifyServiceImpl) filterByReleaseDate(albums []model.Album) []model.Album {

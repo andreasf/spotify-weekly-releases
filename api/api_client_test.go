@@ -79,25 +79,25 @@ var _ = Describe("SpotifyApiClient", func() {
 		BeforeEach(func() {
 			expectedAlbums = []model.Album{
 				{
-					Name:     "Foo, The Album",
-					Id:       "foo-album",
-					ArtistId: "foo-id",
-					Tracks:   []model.Track{},
-					Markets:  []string{"SG"},
+					Name:      "Foo, The Album",
+					Id:        "foo-album",
+					ArtistIds: []string{"foo-id"},
+					Tracks:    []model.Track{},
+					Markets:   []string{"SG"},
 				},
 				{
-					Name:     "Bar, The Album",
-					Id:       "bar-album",
-					ArtistId: "foo-id",
-					Tracks:   []model.Track{},
-					Markets:  []string{"CA", "MX", "US"},
+					Name:      "Bar, The Album",
+					Id:        "bar-album",
+					ArtistIds: []string{"foo-id"},
+					Tracks:    []model.Track{},
+					Markets:   []string{"CA", "MX", "US"},
 				},
 				{
-					Name:     "Baz, The Album",
-					Id:       "baz-album",
-					ArtistId: "foo-id",
-					Tracks:   []model.Track{},
-					Markets:  []string{"SG"},
+					Name:      "Baz, The Album",
+					Id:        "baz-album",
+					ArtistIds: []string{"foo-id"},
+					Tracks:    []model.Track{},
+					Markets:   []string{"SG"},
 				},
 			}
 
@@ -448,6 +448,103 @@ var _ = Describe("SpotifyApiClient", func() {
 			err := client.AddTracksToPlaylist("access-token", "user-id", "playlist-id", tracks)
 
 			Expect(err).To(BeNil())
+
+			Expect(server.ReceivedRequests()).To(HaveLen(2))
+		})
+	})
+
+	Describe("GetSavedAlbums", func() {
+		var cache *cachefakes.FakeCache
+		var client *SpotifyApiClient
+		var expectedAlbums []model.Album
+		var server *ghttp.Server
+		var timeWrapper *platformfakes.FakeTime
+
+		BeforeEach(func() {
+			expectedAlbums = []model.Album{
+				{
+					Name: "Groovements",
+					Id:   "4xjys0dhhX8AD2Oiz5Y5S6",
+					ArtistIds: []string{
+						"22KzEvCtrTGf9l6k7zFcdv",
+						"2GWMZZQNuU0VZra0suXVph",
+						"1eLFONDpKa9ArYaoVjDrKE",
+					},
+					ReleaseDate: "2016-04-15",
+
+					Tracks: []model.Track{
+						{
+							Name:       "Winter",
+							Id:         "6YeQJTy8BAiTdDUooihG9p",
+							ArtistId:   "2GWMZZQNuU0VZra0suXVph",
+							DurationMs: 304493,
+						},
+					},
+					Markets: []string{"AD", "AR"},
+				},
+				{
+					Name:      "Invisible Cinema",
+					Id:        "3xfueIrMUw57owAiYVKt8S",
+					ArtistIds: []string{"22KzEvCtrTGf9l6k7zFcdv"},
+					ReleaseDate: "2008-08-19",
+					Tracks: []model.Track{
+						{
+							Name:       "Travelers",
+							Id:         "5vRHlju25fl2hY0IPwTLbS",
+							ArtistId:   "22KzEvCtrTGf9l6k7zFcdv",
+							DurationMs: 334880,
+						},
+					},
+					Markets: []string{"AD", "AR"},
+				},
+				{
+					Name:      "Senzo",
+					Id:        "2I3odMRAs5aHC69TMt9qAj",
+					ArtistIds: []string{"39mb0I6tdTcCXkeigvzxOJ"},
+					ReleaseDate: "2008-09-26",
+					Tracks: []model.Track{
+						{
+							Name:       "Ocean & The River",
+							Id:         "4enJS8L7a0w0DVDrQJXbUk",
+							ArtistId:   "39mb0I6tdTcCXkeigvzxOJ",
+							DurationMs: 165226,
+						},
+					},
+					Markets: []string{"AD", "AT"},
+				},
+			}
+
+			server = ghttp.NewServer()
+			timeWrapper = &platformfakes.FakeTime{}
+			cache = &cachefakes.FakeCache{}
+
+			page1 := test_resources.LoadResource("../test_resources/saved_albums_page1.json")
+			page1 = replaceApiPrefix(page1, server.URL())
+
+			page2 := test_resources.LoadResource("../test_resources/saved_albums_page2.json")
+			page2 = replaceApiPrefix(page2, server.URL())
+
+			server.AppendHandlers(
+				ghttp.CombineHandlers(
+					ghttp.VerifyRequest("GET", "/v1/me/albums", "limit=50"),
+					ghttp.VerifyHeaderKV("Authorization", "Bearer access-token"),
+					ghttp.RespondWith(200, page1),
+				),
+				ghttp.CombineHandlers(
+					ghttp.VerifyRequest("GET", "/v1/me/albums", "offset=2&limit=2"),
+					ghttp.VerifyHeaderKV("Authorization", "Bearer access-token"),
+					ghttp.RespondWith(200, page2),
+				),
+			)
+
+			client = NewSpotifyApiClient(server.URL(), timeWrapper, cache)
+		})
+
+		It("GETs from the HTTP API", func() {
+			albums, err := client.GetSavedAlbums("access-token")
+
+			Expect(err).To(BeNil())
+			Expect(albums).To(Equal(expectedAlbums))
 
 			Expect(server.ReceivedRequests()).To(HaveLen(2))
 		})

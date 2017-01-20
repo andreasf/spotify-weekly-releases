@@ -15,12 +15,14 @@ import (
 var _ = Describe("SpotifyService", func() {
 	Describe("GetRecentReleases", func() {
 		var expectedAlbums []model.Album
+		var allArtistAlbums []model.Album
 		var followedArtists []model.Artist
 		var fooAlbumInfo model.Album
 		var client *apifakes.FakeSpotifyConnector
 		var service *SpotifyServiceImpl
 		var timeWrapper *platformfakes.FakeTime
 		var oldAlbumList []model.Album
+		var savedAlbums []model.Album
 
 		BeforeEach(func() {
 			expectedAlbums = []model.Album{
@@ -28,6 +30,27 @@ var _ = Describe("SpotifyService", func() {
 					Name:        "foo-album",
 					Id:          "foo-album-id",
 					ReleaseDate: "2017-01-01",
+				},
+			}
+			allArtistAlbums = []model.Album{
+				{
+					Name:        "foo-album",
+					Id:          "foo-album-id",
+					ReleaseDate: "2017-01-01",
+				},
+				{
+					Name:        "saved album",
+					Id:          "saved-album-id",
+					ReleaseDate: "2017-01-01",
+					ArtistIds:   []string{"saved-artist-id"},
+				},
+			}
+			savedAlbums = []model.Album{
+				{
+					Name:        "saved album",
+					Id:          "saved-album-id",
+					ReleaseDate: "2017-01-01",
+					ArtistIds:   []string{"saved-artist-id"},
 				},
 			}
 			oldAlbumList = []model.Album{
@@ -64,11 +87,12 @@ var _ = Describe("SpotifyService", func() {
 
 			client.GetFollowedArtistsReturns(followedArtists, nil)
 			client.GetAlbumInfoReturns([]model.Album{fooAlbumInfo}, nil)
-			client.GetArtistAlbumsReturns(expectedAlbums, nil)
+			client.GetArtistAlbumsReturns(allArtistAlbums, nil)
 			client.GetUserProfileReturns(model.UserProfile{
 				Id:      "user-id",
 				Country: "market-id",
 			}, nil)
+			client.GetSavedAlbumsReturns(savedAlbums, nil)
 
 			timeWrapper = &platformfakes.FakeTime{}
 			now, err := time.Parse("Mon Jan 2 15:04:05 -0700 MST 2006", "Sun Jan 1 00:00:00 +0000 UTC 2017")
@@ -87,6 +111,15 @@ var _ = Describe("SpotifyService", func() {
 			Expect(client.GetUserProfileArgsForCall(0)).To(Equal("access-token"))
 		})
 
+		It("Gets the user's saved albums", func() {
+			_, err := service.GetRecentReleases("access-token")
+
+			Expect(err).To(BeNil())
+
+			Expect(client.GetSavedAlbumsCallCount()).To(Equal(1))
+			Expect(client.GetSavedAlbumsArgsForCall(0)).To(Equal("access-token"))
+		})
+
 		It("Returns a list of recent releases for the user's market", func() {
 			service := NewSpotifyService(client, timeWrapper)
 
@@ -96,12 +129,17 @@ var _ = Describe("SpotifyService", func() {
 			Expect(albums).To(Equal(expectedAlbums))
 
 			Expect(client.GetFollowedArtistsCallCount()).To(Equal(1))
-			Expect(client.GetArtistAlbumsCallCount()).To(Equal(1))
+			Expect(client.GetArtistAlbumsCallCount()).To(Equal(2))
 
-			token, artistId, market := client.GetArtistAlbumsArgsForCall(0)
+			token, artistId1, market1 := client.GetArtistAlbumsArgsForCall(0)
 			Expect(token).To(Equal("access-token"))
-			Expect(artistId).To(Equal("foo-id"))
-			Expect(market).To(Equal("market-id"))
+			Expect(artistId1).To(Equal("foo-id"))
+			Expect(market1).To(Equal("market-id"))
+
+			token2, artistId2, market2 := client.GetArtistAlbumsArgsForCall(1)
+			Expect(token2).To(Equal("access-token"))
+			Expect(artistId2).To(Equal("saved-artist-id"))
+			Expect(market2).To(Equal("market-id"))
 
 			Expect(client.GetAlbumInfoCallCount()).To(Equal(1))
 

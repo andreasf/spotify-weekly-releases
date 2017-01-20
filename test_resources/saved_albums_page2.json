@@ -1,0 +1,95 @@
+{
+  "href" : "https://api.spotify.com/v1/me/albums?offset=2&limit=2",
+  "items" : [ {
+    "added_at" : "2016-04-02T15:11:39Z",
+    "album" : {
+      "album_type" : "album",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/39mb0I6tdTcCXkeigvzxOJ"
+        },
+        "href" : "https://api.spotify.com/v1/artists/39mb0I6tdTcCXkeigvzxOJ",
+        "id" : "39mb0I6tdTcCXkeigvzxOJ",
+        "name" : "Abdullah Ibrahim",
+        "type" : "artist",
+        "uri" : "spotify:artist:39mb0I6tdTcCXkeigvzxOJ"
+      } ],
+      "available_markets" : [ "AD", "AT"],
+      "copyrights" : [ {
+        "text" : "intuition, a division of Schott Music & Media GmbH",
+        "type" : "C"
+      }, {
+        "text" : "intuition, a division of Schott Music & Media GmbH",
+        "type" : "P"
+      } ],
+      "external_ids" : {
+        "upc" : "750447342828"
+      },
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/2I3odMRAs5aHC69TMt9qAj"
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/albums/2I3odMRAs5aHC69TMt9qAj",
+      "id" : "2I3odMRAs5aHC69TMt9qAj",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/466e7545db49908d800d7b748f151e013e7c77de",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/69fdd5b96f9c3bff5644209348229a6e66aac1c2",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/9c271308b660f3f4965f17d5d465091e710feb99",
+        "width" : 64
+      } ],
+      "label" : "intuition",
+      "name" : "Senzo",
+      "popularity" : 21,
+      "release_date" : "2008-09-26",
+      "release_date_precision" : "day",
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/albums/2I3odMRAs5aHC69TMt9qAj/tracks?offset=0&limit=50",
+        "items" : [ {
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/39mb0I6tdTcCXkeigvzxOJ"
+            },
+            "href" : "https://api.spotify.com/v1/artists/39mb0I6tdTcCXkeigvzxOJ",
+            "id" : "39mb0I6tdTcCXkeigvzxOJ",
+            "name" : "Abdullah Ibrahim",
+            "type" : "artist",
+            "uri" : "spotify:artist:39mb0I6tdTcCXkeigvzxOJ"
+          } ],
+          "available_markets" : [ "AD", "AT", "BE", "CH", "CZ", "DE", "DK", "EE", "ES", "FI", "GB", "GR", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "NL", "NO", "PL", "PT", "SE", "SK" ],
+          "disc_number" : 1,
+          "duration_ms" : 165226,
+          "explicit" : false,
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/track/4enJS8L7a0w0DVDrQJXbUk"
+          },
+          "href" : "https://api.spotify.com/v1/tracks/4enJS8L7a0w0DVDrQJXbUk",
+          "id" : "4enJS8L7a0w0DVDrQJXbUk",
+          "name" : "Ocean & The River",
+          "preview_url" : "https://p.scdn.co/mp3-preview/f0b88c9518c31a370da01751c5c5f86697e88f77?cid=8897482848704f2a8f8d7c79726a70d4",
+          "track_number" : 1,
+          "type" : "track",
+          "uri" : "spotify:track:4enJS8L7a0w0DVDrQJXbUk"
+        }],
+        "limit" : 50,
+        "next" : null,
+        "offset" : 0,
+        "previous" : null,
+        "total" : 22
+      },
+      "type" : "album",
+      "uri" : "spotify:album:2I3odMRAs5aHC69TMt9qAj"
+    }
+  } ],
+  "limit" : 2,
+  "next" : null,
+  "offset" : 2,
+  "previous" : "https://api.spotify.com/v1/me/albums?offset=0&limit=2",
+  "total" : 3
+}

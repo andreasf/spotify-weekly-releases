@@ -5,10 +5,22 @@ type Artist struct {
 	Id   string
 }
 
+type ArtistList []Artist
+
+func (self ArtistList) GetIds() []string {
+	ids := make([]string, 0, len(self))
+
+	for _, artist := range self {
+		ids = append(ids, artist.Id)
+	}
+
+	return ids
+}
+
 type Album struct {
 	Name        string
 	Id          string
-	ArtistId    string
+	ArtistIds   []string
 	ReleaseDate string
 	Markets     []string
 	Tracks      []Track
@@ -21,7 +33,7 @@ func (self AlbumList) RemoveDuplicates() AlbumList {
 
 	albumsByName := make(map[string]Album)
 	for _, album := range self {
-		key := album.ArtistId + ":" + album.Name
+		key := album.ArtistIds[0] + ":" + album.Name
 
 		_, exists := albumsByName[key]
 		if !exists {
@@ -31,6 +43,36 @@ func (self AlbumList) RemoveDuplicates() AlbumList {
 	}
 
 	return filtered
+}
+
+func (self AlbumList) Remove(albums []Album) AlbumList {
+	filtered := make([]Album, 0, len(self))
+	toRemove := make(map[string]bool)
+
+	for _, album := range albums {
+		toRemove[album.Id] = true
+	}
+
+	for _, album := range self {
+		_, wantToRemove := toRemove[album.Id]
+		if wantToRemove {
+			continue
+		}
+
+		filtered = append(filtered, album)
+	}
+
+	return filtered
+}
+
+func (self AlbumList) GetArtistIds() []string {
+	artistIds := make([]string, 0, len(self))
+
+	for _, album := range self {
+		artistIds = append(artistIds, album.ArtistIds...)
+	}
+
+	return artistIds
 }
 
 type Track struct {

@@ -80,19 +80,19 @@ var _ = Describe("Model", func() {
 			}
 			duplicateTracks = []Track{
 				{
-					Id: "track-1",
+					Id:       "track-1",
 					ArtistId: "artist-1",
 				},
 				{
-					Id: "track-1",
+					Id:       "track-1",
 					ArtistId: "artist-1",
 				},
 				{
-					Id: "track-2",
+					Id:       "track-2",
 					ArtistId: "artist-2",
 				},
 				{
-					Id: "track-2",
+					Id:       "track-2",
 					ArtistId: "artist-3",
 				},
 			}
@@ -121,17 +121,20 @@ var _ = Describe("Model", func() {
 			duplicateAlbumList = []Album{
 				{
 					Name:        "fooplicate",
+					ArtistIds:   []string{"foo-id"},
 					Id:          "baz-album-id",
 					ReleaseDate: "2017-01-01",
 				},
 				{
 					Name:        "fooplicate",
 					Id:          "foo-album-id",
+					ArtistIds:   []string{"foo-id"},
 					ReleaseDate: "2016-06-02",
 				},
 				{
 					Name:        "barnique",
 					Id:          "bar-album-id",
+					ArtistIds:   []string{"bar-id", "baz-id"},
 					ReleaseDate: "2016-05-23",
 				},
 			}
@@ -145,6 +148,59 @@ var _ = Describe("Model", func() {
 				Expect(filteredList[0].Id).To(Equal("baz-album-id"))
 				Expect(filteredList[1].Id).To(Equal("bar-album-id"))
 			})
+		})
+
+		Describe("GetArtistIds", func() {
+			It("Returns the list of artists", func() {
+				artistList := []string{
+					"foo-id",
+					"foo-id",
+					"bar-id",
+					"baz-id",
+				}
+
+				Expect(duplicateAlbumList.GetArtistIds()).To(Equal(artistList))
+			})
+		})
+
+		It("Remove removes the given albums from the list", func() {
+			toRemove := Album{
+				Id: "baz-album-id",
+			}
+
+			newList := duplicateAlbumList.Remove([]Album{toRemove})
+
+			Expect(newList).To(HaveLen(2))
+			Expect(newList[0].Id).To(Equal("foo-album-id"))
+			Expect(newList[1].Id).To(Equal("bar-album-id"))
+		})
+	})
+
+	Describe("ArtistList", func() {
+		It("GetIds returns list of artist ids", func() {
+			var artistList ArtistList
+			artistList = []Artist{
+				{
+					Name: "foo",
+					Id:   "foo-id",
+				},
+				{
+					Name: "bar",
+					Id:   "bar-id",
+				},
+				{
+					Name: "foo",
+					Id:   "foo-id",
+				},
+			}
+
+			artistIds := []string{
+				"foo-id",
+				"bar-id",
+				"foo-id",
+			}
+
+			Expect(artistList.GetIds()).To(Equal(artistIds))
 		})
 	})
 })
