@@ -2,7 +2,6 @@ package json
 
 import (
 	"github.com/andreasf/spotify-weekly-releases/model"
-	"log"
 )
 
 type FollowedArtists struct {
