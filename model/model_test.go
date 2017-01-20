@@ -64,6 +64,8 @@ var _ = Describe("Model", func() {
 	})
 
 	Describe("TrackList", func() {
+		var duplicateTracks TrackList
+
 		It("GetUris returns the list of track URIs", func() {
 			var tracks TrackList = []Track{
 				{
@@ -76,12 +78,39 @@ var _ = Describe("Model", func() {
 					Id: "track-3",
 				},
 			}
+			duplicateTracks = []Track{
+				{
+					Id: "track-1",
+					ArtistId: "artist-1",
+				},
+				{
+					Id: "track-1",
+					ArtistId: "artist-1",
+				},
+				{
+					Id: "track-2",
+					ArtistId: "artist-2",
+				},
+				{
+					Id: "track-2",
+					ArtistId: "artist-3",
+				},
+			}
 
 			Expect(tracks.GetUris()).To(Equal([]string{
 				"spotify:track:track-1",
 				"spotify:track:track-2",
 				"spotify:track:track-3",
 			}))
+		})
+
+		It("RemoveDuplicates removes duplicates based on artist id and track name", func() {
+			filteredList := duplicateTracks.RemoveDuplicates()
+
+			Expect(filteredList).To(HaveLen(3))
+			Expect(filteredList[0].Id).To(Equal("track-1"))
+			Expect(filteredList[1].Id).To(Equal("track-2"))
+			Expect(filteredList[2].Id).To(Equal("track-2"))
 		})
 	})
 

@@ -141,16 +141,19 @@ var _ = Describe("Schema", func() {
 				{
 					Name:       "Angel",
 					Id:         "7uv632EkfwYhXoqf8rhYrg",
+					ArtistId: "6FXMGgJwohJLUSr5nVlf9X",
 					DurationMs: 379533,
 				},
 				{
 					Name:       "Risingson",
 					Id:         "6ggJ6MceyHGWtUg1KLp3M1",
+					ArtistId: "6FXMGgJwohJLUSr5nVlf9X",
 					DurationMs: 298826,
 				},
 				{
 					Name:       "Teardrop",
 					Id:         "67Hna13dNDkZvBpTXRIaOJ",
+					ArtistId: "6FXMGgJwohJLUSr5nVlf9X",
 					DurationMs: 330773,
 				},
 			},
@@ -208,19 +211,55 @@ var blackRadio ArtistAlbum = ArtistAlbum{
 	Tracks: Tracks{
 		Items: []Track{
 			{
-				Id:          "2fus3smj2B653XXRGoLiYd",
+				Id: "2fus3smj2B653XXRGoLiYd",
+				Artists: []Artist{
+					{
+						Id:   "7vZ7qmfXiu114lY0qm7rOe",
+						Name: "Robert Glasper Experiment",
+						Uri:  "spotify:artist:7vZ7qmfXiu114lY0qm7rOe",
+					},
+				},
 				Name:        "Baby Tonight - Black Radio 2 Theme/Mic Check 2",
 				TrackNumber: 1,
 				DurationMs:  263653,
 			},
 			{
-				Id:          "1NlTw8XgQrrWJEnXDlk7iq",
+				Id: "1NlTw8XgQrrWJEnXDlk7iq",
+				Artists: []Artist{
+					{
+						Id:   "7vZ7qmfXiu114lY0qm7rOe",
+						Name: "Robert Glasper Experiment",
+						Uri:  "spotify:artist:7vZ7qmfXiu114lY0qm7rOe",
+					},
+					{
+						Id:   "2GHclqNVjqGuiE5mA7BEoc",
+						Name: "Common",
+						Uri:  "spotify:artist:2GHclqNVjqGuiE5mA7BEoc",
+					},
+					{
+						Id:   "0wsdUS0EJ7zHgti2nxTVWR",
+						Name: "Patrick Stump",
+						Uri:  "spotify:artist:0wsdUS0EJ7zHgti2nxTVWR",
+					},
+				},
 				Name:        "I Stand Alone",
 				TrackNumber: 2,
 				DurationMs:  293960,
 			},
 			{
-				Id:          "5VgshfaTxvVsaJUanqkz8u",
+				Id: "5VgshfaTxvVsaJUanqkz8u",
+				Artists: []Artist{
+					{
+						Id:   "7vZ7qmfXiu114lY0qm7rOe",
+						Name: "Robert Glasper Experiment",
+						Uri:  "spotify:artist:7vZ7qmfXiu114lY0qm7rOe",
+					},
+					{
+						Id:   "05oH07COxkXKIMt6mIPRee",
+						Name: "Brandy",
+						Uri:  "spotify:artist:05oH07COxkXKIMt6mIPRee",
+					},
+				},
 				Name:        "What Are We Doing",
 				TrackNumber: 3,
 				DurationMs:  214920,
@@ -250,18 +289,39 @@ var mezzanine ArtistAlbum = ArtistAlbum{
 				Name:        "Angel",
 				TrackNumber: 1,
 				DurationMs:  379533,
+				Artists: []Artist{
+					{
+						Id:   "6FXMGgJwohJLUSr5nVlf9X",
+						Name: "Massive Attack",
+						Uri:  "spotify:artist:6FXMGgJwohJLUSr5nVlf9X",
+					},
+				},
 			},
 			{
 				Id:          "6ggJ6MceyHGWtUg1KLp3M1",
 				Name:        "Risingson",
 				TrackNumber: 2,
 				DurationMs:  298826,
+				Artists: []Artist{
+					{
+						Id:   "6FXMGgJwohJLUSr5nVlf9X",
+						Name: "Massive Attack",
+						Uri:  "spotify:artist:6FXMGgJwohJLUSr5nVlf9X",
+					},
+				},
 			},
 			{
 				Id:          "67Hna13dNDkZvBpTXRIaOJ",
 				Name:        "Teardrop",
 				TrackNumber: 3,
 				DurationMs:  330773,
+				Artists: []Artist{
+					{
+						Id:   "6FXMGgJwohJLUSr5nVlf9X",
+						Name: "Massive Attack",
+						Uri:  "spotify:artist:6FXMGgJwohJLUSr5nVlf9X",
+					},
+				},
 			},
 		},
 	},
@@ -287,18 +347,39 @@ var dummy ArtistAlbum = ArtistAlbum{
 				Name:        "Mysterons",
 				TrackNumber: 1,
 				DurationMs:  306200,
+				Artists: []Artist{
+					{
+						Id:   "6liAMWkVf5LH7YR9yfFy1Y",
+						Name: "Portishead",
+						Uri:  "spotify:artist:6liAMWkVf5LH7YR9yfFy1Y",
+					},
+				},
 			},
 			{
 				Id:          "6vTtCOimcPs5H1Jr9d0Aep",
 				Name:        "Sour Times",
 				TrackNumber: 2,
 				DurationMs:  254000,
+				Artists: []Artist{
+					{
+						Id:   "6liAMWkVf5LH7YR9yfFy1Y",
+						Name: "Portishead",
+						Uri:  "spotify:artist:6liAMWkVf5LH7YR9yfFy1Y",
+					},
+				},
 			},
 			{
 				Id:          "6pW8YspamPCxUwgvYttTSc",
 				Name:        "Strangers",
 				TrackNumber: 3,
 				DurationMs:  238000,
+				Artists: []Artist{
+					{
+						Id:   "6liAMWkVf5LH7YR9yfFy1Y",
+						Name: "Portishead",
+						Uri:  "spotify:artist:6liAMWkVf5LH7YR9yfFy1Y",
+					},
+				},
 			},
 		},
 	},

@@ -79,10 +79,11 @@ func (self Tracks) ToModel() []model.Track {
 }
 
 type Track struct {
-	Id          string `json:"id"`
-	Name        string `json:"name"`
-	TrackNumber int    `json:"track_number"`
-	DurationMs  int    `json:"duration_ms"`
+	Id          string   `json:"id"`
+	Artists     []Artist `json:"artists"`
+	Name        string   `json:"name"`
+	TrackNumber int      `json:"track_number"`
+	DurationMs  int      `json:"duration_ms"`
 }
 
 func (self Track) ToModel() model.Track {
@@ -90,6 +91,7 @@ func (self Track) ToModel() model.Track {
 		Name:       self.Name,
 		Id:         self.Id,
 		DurationMs: self.DurationMs,
+		ArtistId:   self.Artists[0].Id,
 	}
 }
 

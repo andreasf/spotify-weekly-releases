@@ -36,6 +36,7 @@ func (self AlbumList) RemoveDuplicates() AlbumList {
 type Track struct {
 	Name       string
 	Id         string
+	ArtistId   string
 	DurationMs int
 }
 
@@ -66,4 +67,21 @@ func (self TrackList) GetUris() []string {
 	}
 
 	return ids
+}
+
+func (self TrackList) RemoveDuplicates() TrackList {
+	filtered := make([]Track, 0, len(self))
+
+	tracksByName := make(map[string]Track)
+	for _, track := range self {
+		key := track.ArtistId + ":" + track.Name
+
+		_, exists := tracksByName[key]
+		if !exists {
+			tracksByName[key] = track
+			filtered = append(filtered, track)
+		}
+	}
+
+	return filtered
 }

@@ -33,12 +33,15 @@ func main() {
 
 	albums = albums.RemoveDuplicates()
 
-	tracks := make([]model.Track, 0, len(albums))
+	var tracks model.TrackList
+	tracks = make([]model.Track, 0, len(albums))
 	for _, album := range albums {
 		tracks = append(tracks, *album.GetSampleTrack())
 	}
 
-	fmt.Printf("Creating a playlist from %d releases...\n", len(albums))
+	tracks = tracks.RemoveDuplicates()
+
+	fmt.Printf("Creating a playlist from %d releases...\n", len(tracks))
 
 	date := time.Now().Format("2006-01-02")
 	service.CreatePlaylist(accessToken, "Weekly Releases - "+date, tracks)
