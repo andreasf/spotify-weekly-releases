@@ -79,22 +79,25 @@ var _ = Describe("SpotifyApiClient", func() {
 		BeforeEach(func() {
 			expectedAlbums = []model.Album{
 				{
-					Name:    "Foo, The Album",
-					Id:      "foo-album",
-					Tracks:  []model.Track{},
-					Markets: []string{"SG"},
+					Name:     "Foo, The Album",
+					Id:       "foo-album",
+					ArtistId: "foo-id",
+					Tracks:   []model.Track{},
+					Markets:  []string{"SG"},
 				},
 				{
-					Name:    "Bar, The Album",
-					Id:      "bar-album",
-					Tracks:  []model.Track{},
-					Markets: []string{"CA", "MX", "US"},
+					Name:     "Bar, The Album",
+					Id:       "bar-album",
+					ArtistId: "foo-id",
+					Tracks:   []model.Track{},
+					Markets:  []string{"CA", "MX", "US"},
 				},
 				{
-					Name:    "Baz, The Album",
-					Id:      "baz-album",
-					Tracks:  []model.Track{},
-					Markets: []string{"SG"},
+					Name:     "Baz, The Album",
+					Id:       "baz-album",
+					ArtistId: "foo-id",
+					Tracks:   []model.Track{},
+					Markets:  []string{"SG"},
 				},
 			}
 
@@ -359,7 +362,7 @@ var _ = Describe("SpotifyApiClient", func() {
 
 			Expect(err).To(BeNil())
 			Expect(profile).To(Equal(model.UserProfile{
-				Id: "user-id",
+				Id:      "user-id",
 				Country: "market-id",
 			}))
 

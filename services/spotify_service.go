@@ -14,7 +14,7 @@ type SpotifyService interface {
 }
 
 type SpotifyServiceImpl struct {
-	apiClient api.SpotifyConnector
+	apiClient   api.SpotifyConnector
 	timeWrapper platform.Time
 }
 
@@ -22,7 +22,7 @@ const ALBUMS_PER_REQUEST int = 20
 
 func NewSpotifyService(apiClient api.SpotifyConnector, timeWrapper platform.Time) *SpotifyServiceImpl {
 	return &SpotifyServiceImpl{
-		apiClient: apiClient,
+		apiClient:   apiClient,
 		timeWrapper: timeWrapper,
 	}
 }

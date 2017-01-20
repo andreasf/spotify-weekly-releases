@@ -84,4 +84,38 @@ var _ = Describe("Model", func() {
 			}))
 		})
 	})
+
+	Describe("AlbumList", func() {
+		var duplicateAlbumList AlbumList
+
+		BeforeEach(func() {
+			duplicateAlbumList = []Album{
+				{
+					Name:        "fooplicate",
+					Id:          "baz-album-id",
+					ReleaseDate: "2017-01-01",
+				},
+				{
+					Name:        "fooplicate",
+					Id:          "foo-album-id",
+					ReleaseDate: "2016-06-02",
+				},
+				{
+					Name:        "barnique",
+					Id:          "bar-album-id",
+					ReleaseDate: "2016-05-23",
+				},
+			}
+		})
+
+		Describe("RemoveDuplicates", func() {
+			It("Removes duplicates based on artist id and album name", func() {
+				filteredList := duplicateAlbumList.RemoveDuplicates()
+
+				Expect(filteredList).To(HaveLen(2))
+				Expect(filteredList[0].Id).To(Equal("baz-album-id"))
+				Expect(filteredList[1].Id).To(Equal("bar-album-id"))
+			})
+		})
+	})
 })

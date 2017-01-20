@@ -95,11 +95,25 @@ var _ = Describe("Schema", func() {
 			Name:             "Foo, The Album",
 			Id:               "foo-album",
 			AvailableMarkets: []string{"SG"},
+			Artists: []Artist{
+				{
+					Id:   "foo-id",
+					Name: "foo",
+					Uri:  "spotify:artist:foo-id",
+				},
+			},
 		}))
 		Expect(albums.Items[1]).To(Equal(ArtistAlbum{
 			Name:             "Bar, The Album",
 			Id:               "bar-album",
 			AvailableMarkets: []string{"CA", "MX", "US"},
+			Artists: []Artist{
+				{
+					Id:   "foo-id",
+					Name: "foo",
+					Uri:  "spotify:artist:foo-id",
+				},
+			},
 		}))
 	})
 
@@ -121,9 +135,8 @@ var _ = Describe("Schema", func() {
 			Name:        "Mezzanine",
 			Id:          "49MNmJhZQewjt06rpwp6QR",
 			ReleaseDate: "1998-04-20",
-			Markets: []string{
-				"AB", "CD",
-			},
+			Markets:     []string{"AB", "CD"},
+			ArtistId:    "6FXMGgJwohJLUSr5nVlf9X",
 			Tracks: []model.Track{
 				{
 					Name:       "Angel",
@@ -185,6 +198,13 @@ var blackRadio ArtistAlbum = ArtistAlbum{
 	ReleaseDate:          "2013-01-01",
 	ReleaseDatePrecision: "day",
 	AvailableMarkets:     []string{"AD", "AR"},
+	Artists: []Artist{
+		{
+			Id:   "7vZ7qmfXiu114lY0qm7rOe",
+			Name: "Robert Glasper Experiment",
+			Uri:  "spotify:artist:7vZ7qmfXiu114lY0qm7rOe",
+		},
+	},
 	Tracks: Tracks{
 		Items: []Track{
 			{
@@ -214,9 +234,15 @@ var mezzanine ArtistAlbum = ArtistAlbum{
 	Id:                   "49MNmJhZQewjt06rpwp6QR",
 	ReleaseDate:          "1998-04-20",
 	ReleaseDatePrecision: "day",
-	AvailableMarkets: []string{
-		"AB", "CD",
+	AvailableMarkets:     []string{"AB", "CD"},
+	Artists: []Artist{
+		{
+			Id:   "6FXMGgJwohJLUSr5nVlf9X",
+			Name: "Massive Attack",
+			Uri:  "spotify:artist:6FXMGgJwohJLUSr5nVlf9X",
+		},
 	},
+
 	Tracks: Tracks{
 		Items: []Track{
 			{
@@ -247,6 +273,13 @@ var dummy ArtistAlbum = ArtistAlbum{
 	ReleaseDate:          "1994-01-01",
 	ReleaseDatePrecision: "day",
 	AvailableMarkets:     []string{"CA", "MX", "US"},
+	Artists: []Artist{
+		{
+			Id:   "6liAMWkVf5LH7YR9yfFy1Y",
+			Name: "Portishead",
+			Uri:  "spotify:artist:6liAMWkVf5LH7YR9yfFy1Y",
+		},
+	},
 	Tracks: Tracks{
 		Items: []Track{
 			{

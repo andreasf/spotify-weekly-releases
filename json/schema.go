@@ -2,6 +2,7 @@ package json
 
 import (
 	"github.com/andreasf/spotify-weekly-releases/model"
+	"log"
 )
 
 type FollowedArtists struct {
@@ -45,6 +46,7 @@ type ArtistAlbums struct {
 
 type ArtistAlbum struct {
 	Id                   string   `json:"id"`
+	Artists              []Artist `json:"artists"`
 	Name                 string   `json:"name"`
 	ReleaseDate          string   `json:"release_date"`
 	ReleaseDatePrecision string   `json:"release_date_precision"`
@@ -55,6 +57,7 @@ type ArtistAlbum struct {
 func (self ArtistAlbum) ToModel() model.Album {
 	return model.Album{
 		Id:          self.Id,
+		ArtistId:    self.Artists[0].Id,
 		Name:        self.Name,
 		ReleaseDate: self.ReleaseDate,
 		Markets:     self.AvailableMarkets,

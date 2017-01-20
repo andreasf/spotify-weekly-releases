@@ -5,10 +5,10 @@ import (
 
 	"github.com/andreasf/spotify-weekly-releases/api/apifakes"
 	"github.com/andreasf/spotify-weekly-releases/model"
+	"github.com/andreasf/spotify-weekly-releases/platform/platformfakes"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"strconv"
-	"github.com/andreasf/spotify-weekly-releases/platform/platformfakes"
 	"time"
 )
 

@@ -24,11 +24,14 @@ func main() {
 	apiClient := api.NewSpotifyApiClient("https://api.spotify.com", timeWrapper, cache)
 	service := services.NewSpotifyService(apiClient, timeWrapper)
 
+	var albums model.AlbumList
 	albums, err := service.GetRecentReleases(accessToken)
 	if err != nil {
 		fmt.Printf("Error retrieving followed albums: %v", err)
 		os.Exit(1)
 	}
+
+	albums = albums.RemoveDuplicates()
 
 	tracks := make([]model.Track, 0, len(albums))
 	for _, album := range albums {

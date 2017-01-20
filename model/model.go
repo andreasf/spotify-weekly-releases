@@ -8,9 +8,29 @@ type Artist struct {
 type Album struct {
 	Name        string
 	Id          string
+	ArtistId    string
 	ReleaseDate string
 	Markets     []string
 	Tracks      []Track
+}
+
+type AlbumList []Album
+
+func (self AlbumList) RemoveDuplicates() AlbumList {
+	filtered := make([]Album, 0, len(self))
+
+	albumsByName := make(map[string]Album)
+	for _, album := range self {
+		key := album.ArtistId + ":" + album.Name
+
+		_, exists := albumsByName[key]
+		if !exists {
+			albumsByName[key] = album
+			filtered = append(filtered, album)
+		}
+	}
+
+	return filtered
 }
 
 type Track struct {
