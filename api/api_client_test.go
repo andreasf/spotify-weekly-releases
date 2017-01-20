@@ -47,7 +47,7 @@ var _ = Describe("SpotifyApiClient", func() {
 
 			server.AppendHandlers(
 				ghttp.CombineHandlers(
-					ghttp.VerifyRequest("GET", "/v1/me/following", "type=artist"),
+					ghttp.VerifyRequest("GET", "/v1/me/following", "type=artist&limit=50"),
 					ghttp.VerifyHeaderKV("Authorization", "Bearer access-token"),
 					ghttp.RespondWith(200, page1),
 				),
@@ -117,7 +117,7 @@ var _ = Describe("SpotifyApiClient", func() {
 		It("Makes a GET request to the endpoint", func() {
 			server.AppendHandlers(
 				ghttp.CombineHandlers(
-					ghttp.VerifyRequest("GET", "/v1/artists/foo-id/albums", "album_type=album&market=market-id"),
+					ghttp.VerifyRequest("GET", "/v1/artists/foo-id/albums", "album_type=album&limit=50&market=market-id"),
 					ghttp.VerifyHeaderKV("Authorization", "Bearer access-token"),
 					ghttp.RespondWith(200, page1),
 				),
@@ -143,7 +143,7 @@ var _ = Describe("SpotifyApiClient", func() {
 
 			server.AppendHandlers(
 				ghttp.CombineHandlers(
-					ghttp.VerifyRequest("GET", "/v1/artists/foo-id/albums", "album_type=album&market=market-id"),
+					ghttp.VerifyRequest("GET", "/v1/artists/foo-id/albums", "album_type=album&limit=50&market=market-id"),
 					ghttp.VerifyHeaderKV("Authorization", "Bearer access-token"),
 					ghttp.RespondWith(200, page1),
 				),
@@ -182,13 +182,13 @@ var _ = Describe("SpotifyApiClient", func() {
 			Expect(albums).To(Equal(page2Albums))
 			Expect(server.ReceivedRequests()).Should(HaveLen(0))
 			Expect(cache.GetCallCount()).To(Equal(1))
-			Expect(cache.GetArgsForCall(0)).To(Equal(server.URL() + "/v1/artists/foo-id/albums?album_type=album&market=market-id"))
+			Expect(cache.GetArgsForCall(0)).To(Equal(server.URL() + "/v1/artists/foo-id/albums?album_type=album&limit=50&market=market-id"))
 		})
 
 		It("Stores responses in the cache", func() {
 			server.AppendHandlers(
 				ghttp.CombineHandlers(
-					ghttp.VerifyRequest("GET", "/v1/artists/foo-id/albums", "album_type=album&market=market-id"),
+					ghttp.VerifyRequest("GET", "/v1/artists/foo-id/albums", "album_type=album&limit=50&market=market-id"),
 					ghttp.VerifyHeaderKV("Authorization", "Bearer access-token"),
 					ghttp.RespondWith(200, page1),
 				),
@@ -209,7 +209,7 @@ var _ = Describe("SpotifyApiClient", func() {
 
 			key1, data1 := cache.SetArgsForCall(0)
 			key2, data2 := cache.SetArgsForCall(1)
-			Expect(key1).To(Equal(server.URL() + "/v1/artists/foo-id/albums?album_type=album&market=market-id"))
+			Expect(key1).To(Equal(server.URL() + "/v1/artists/foo-id/albums?album_type=album&limit=50&market=market-id"))
 			Expect(key2).To(Equal(server.URL() + "/v1/artists/foo-id/albums?offset=2&limit=2&album_type=single,album,compilation,appears_on,ep"))
 			Expect(data1).To(Equal(page1))
 			Expect(data2).To(Equal(page2))

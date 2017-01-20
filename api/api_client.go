@@ -45,7 +45,7 @@ func NewSpotifyApiClient(apiUrlPrefix string, timeWrapper platform.Time, cache c
 
 func (self *SpotifyApiClient) GetFollowedArtists(accessToken string) ([]model.Artist, error) {
 	artists := []model.Artist{}
-	nextUrl := self.urlPrefix + "/v1/me/following?type=artist"
+	nextUrl := self.urlPrefix + "/v1/me/following?type=artist&limit=50"
 
 	for nextUrl != "" {
 		contents, err := self.getWithRateLimiting(accessToken, nextUrl)
@@ -71,7 +71,7 @@ func (self *SpotifyApiClient) GetFollowedArtists(accessToken string) ([]model.Ar
 
 func (self *SpotifyApiClient) GetArtistAlbums(accessToken, artistId string, market string) ([]model.Album, error) {
 	albums := []model.Album{}
-	nextUrl := self.urlPrefix + "/v1/artists/" + artistId + "/albums?album_type=album&market=" + market
+	nextUrl := self.urlPrefix + "/v1/artists/" + artistId + "/albums?album_type=album&limit=50&market=" + market
 
 	for nextUrl != "" {
 		contents, err := self.getWithRateLimitingAndCache(accessToken, nextUrl)
